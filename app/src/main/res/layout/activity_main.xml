@@ -15,6 +15,7 @@
         android:text="Selecione o tipo de mensagem que deseja enviar" />
 
     <Button
+        android:id="@+id/button_defined_messages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
