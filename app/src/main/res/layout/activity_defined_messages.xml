@@ -20,6 +20,13 @@
       disso, usamos columnWeight para dizer que ela
       deve tentar ocupar o espaço horizontal que puder.
     -->
+
+    <Spinner
+        android:id="@+id/spinner_messages"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/text_message"
         android:layout_height="wrap_content"

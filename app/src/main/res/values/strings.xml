@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Projeto1</string>
+    <string-array name="messages">
+        <item>Message 1</item>
+        <item>Message 2</item>
+        <item>Message 3</item>
+        <item>Message 4</item>
+        <item>Message 5</item>
+        <item>Message 6</item>
+    </string-array>
 </resources>
