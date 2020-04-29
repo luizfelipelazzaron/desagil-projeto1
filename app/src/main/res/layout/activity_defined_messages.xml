@@ -23,18 +23,8 @@
 
     <Spinner
         android:id="@+id/spinner_messages"
-        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/text_message"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:layout_columnWeight="1"
-        android:gravity="top"
-        android:hint="Mensagem"
-        android:minLines="5" />
 
     <!--
       Repare que podemos usar o atributo inputType para
@@ -45,12 +35,12 @@
     <EditText
         android:id="@+id/text_phone"
         android:layout_height="wrap_content"
-        android:layout_columnWeight="1"
         android:hint="Telefone"
         android:inputType="phone" />
 
     <Button
         android:id="@+id/button_send"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enviar" />
 

@@ -31,19 +31,18 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defined_messages);
 
+       // EditText textMessage = findViewById(R.id.text_message);
+        EditText textPhone = findViewById(R.id.text_phone);
+        Button buttonSend = findViewById(R.id.button_send);
+
         Spinner spinner = (Spinner) findViewById(R.id.spinner_messages);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.messages,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-
-        EditText textMessage = findViewById(R.id.text_message);
-        EditText textPhone = findViewById(R.id.text_phone);
-        Button buttonSend = findViewById(R.id.button_send);
-
         buttonSend.setOnClickListener((view) -> {
-            String message = textMessage.getText().toString();
+            String message = spinner.toString();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");

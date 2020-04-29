@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Projeto1</string>
     <string-array name="messages">
-        <item>Message 1</item>
-        <item>Message 2</item>
-        <item>Message 3</item>
-        <item>Message 4</item>
-        <item>Message 5</item>
-        <item>Message 6</item>
+        <item>Você poderia pegar um copo com água?</item>
+        <item>A vista está bonita hoje</item>
+        <item>Obrigado!</item>
+        <item>Está na hora do remédio?</item>
+        <item>Gostaria de conhecer um lugar diferente hoje</item>
+        <item>Estou bem.</item>
+        <item>Não estou me sentindo muito bem</item>
     </string-array>
 </resources>
