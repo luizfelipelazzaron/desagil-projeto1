@@ -1,7 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
@@ -13,7 +11,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class DefinedMessagesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+import androidx.appcompat.app.AppCompatActivity;
+
+public class DefinedMessagesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     // Método de conveniência para mostrar uma bolha de texto.
     private void showToast(String text) {
@@ -31,18 +31,18 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defined_messages);
 
-       // EditText textMessage = findViewById(R.id.text_message);
+        // EditText textMessage = findViewById(R.id.text_message);
         EditText textPhone = findViewById(R.id.text_phone);
         Button buttonSend = findViewById(R.id.button_send);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_messages);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.messages,android.R.layout.simple_spinner_item);
+        Spinner spinner = findViewById(R.id.spinner_messages);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.messages, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
         buttonSend.setOnClickListener((view) -> {
-            String message = spinner.toString();
+            String message = spinner.getSelectedItem().toString();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");
@@ -56,6 +56,8 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                 showToast("Número inválido!");
                 return;
+            } else {
+                showToast("Mensagem enviada");
             }
 
             // Enviar uma mensagem de SMS. Por simplicidade,
@@ -73,11 +75,10 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }
