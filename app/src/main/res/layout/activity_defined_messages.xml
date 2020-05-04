@@ -27,7 +27,13 @@
         android:id="@+id/spinner_messages"
         android:textSize="30sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5pt"
+        android:layout_marginTop="5pt"
+        android:backgroundTint="#d9d9d9"
+        android:entries="@array/messages"
+        android:theme="@style/SpinnerTheme"
+        />
 
     <!--
       Repare que podemos usar o atributo inputType para

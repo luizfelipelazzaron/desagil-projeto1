@@ -25,16 +25,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         tools:context=".MainActivity">
-
-
-
 
         <Button
             android:id="@+id/slash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:text="slash" />
         
@@ -44,10 +42,6 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="space" />
-
-        <!-- Uma vez que o usuário precisa utilizar um único dedo e
-        dado que a quantidade de caracteres é muito maior que a quantidade
-        de espaços;-->
 
         <Button
             android:id="@+id/dash"
@@ -60,7 +54,6 @@
             android:id="@+id/dot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:textSize="20sp"
             android:text="dot" />
 
@@ -72,8 +65,8 @@
         android:id="@+id/backspace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:text="apagar" />
@@ -82,8 +75,8 @@
         android:id="@+id/enviar"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Enviar" />
