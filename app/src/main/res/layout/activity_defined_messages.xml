@@ -9,7 +9,8 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:columnCount="1"
     android:rowCount="3"
     tools:context=".DefinedMessagesActivity">
@@ -24,7 +25,13 @@
     <Spinner
         android:id="@+id/spinner_messages"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5pt"
+        android:layout_marginTop="5pt"
+        android:backgroundTint="#d9d9d9"
+        android:entries="@array/messages"
+        android:theme="@style/SpinnerTheme"
+        />
 
     <!--
       Repare que podemos usar o atributo inputType para
@@ -32,16 +39,11 @@
       telefone. Isso é ótimo para usabilidade, pois faz
       com que o teclado fique restrito apenas a números.
     -->
-    <EditText
-        android:id="@+id/text_phone"
-        android:layout_height="wrap_content"
-        android:hint="Telefone"
-        android:inputType="phone" />
 
     <Button
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar" />
+        android:text="Enviar para o cuidador" />
 
 </GridLayout>
