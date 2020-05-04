@@ -18,20 +18,21 @@ public class NewMessage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_message);
 
+        setContentView(R.layout.activity_new_message);
 
         Button enviar = findViewById(R.id.enviar);
 
         enviar.setOnClickListener((view -> {
             startSendMessageActivity();
         }));
-
     }
 
-    private void startSendMessageActivity () {
+
+    private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
 
         startActivity(intent);
     }
 }
+

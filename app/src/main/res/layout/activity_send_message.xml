@@ -21,4 +21,11 @@
         android:layout_height="wrap_content"
         android:text="Enviar" />
 
+    <Button
+        android:id="@+id/cuidadorShortcut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Enviar para o cuidador" />
+
 </GridLayout>
