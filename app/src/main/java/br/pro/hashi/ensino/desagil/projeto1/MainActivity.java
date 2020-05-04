@@ -24,12 +24,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void startNewMSGActivity () {
+        Intent intent = new Intent (this, NewMessage.class);
+
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button button_defined_messages = findViewById(R.id.button_defined_messages);
+
+        Button button_new_message = findViewById(R.id.button_new_message);
+
+        button_new_message.setOnClickListener((view -> {
+            startNewMSGActivity();
+        }));
 
         button_defined_messages.setOnClickListener((view) -> {
 
