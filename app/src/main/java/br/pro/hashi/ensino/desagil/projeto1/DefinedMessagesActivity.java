@@ -32,7 +32,7 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
         setContentView(R.layout.activity_defined_messages);
 
         // EditText textMessage = findViewById(R.id.text_message);
-        EditText textPhone = findViewById(R.id.text_phone);
+        // EditText textPhone = findViewById(R.id.text_phone);
         Button buttonSend = findViewById(R.id.button_send);
 
         Spinner spinner = findViewById(R.id.spinner_messages);
@@ -49,7 +49,8 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
                 return;
             }
 
-            String phone = textPhone.getText().toString();
+           // String phone = textPhone.getText().toString();
+            String phone = "+5511988284562";
 
             // Esta verificação do número de telefone é bem
             // rígida, pois exige até mesmo o código do país.
@@ -68,7 +69,7 @@ public class DefinedMessagesActivity extends AppCompatActivity implements Adapte
 
             // Limpar o campo para nenhum engraçadinho
             // ficar apertando o botão várias vezes.
-            textPhone.setText("");
+            // textPhone.setText("");
         });
     }
 
