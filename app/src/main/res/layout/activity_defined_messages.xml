@@ -32,16 +32,11 @@
       telefone. Isso é ótimo para usabilidade, pois faz
       com que o teclado fique restrito apenas a números.
     -->
-    <EditText
-        android:id="@+id/text_phone"
-        android:layout_height="wrap_content"
-        android:hint="Telefone"
-        android:inputType="phone" />
 
     <Button
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar" />
+        android:text="Enviar para o cuidador" />
 
 </GridLayout>
