@@ -1,11 +1,19 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Button;
 
 public class NewMessage extends AppCompatActivity {
+
+    private static final int REQUEST_SEND_SMS = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,16 +21,17 @@ public class NewMessage extends AppCompatActivity {
         setContentView(R.layout.activity_new_message);
 
 
-        Button button_new_message = findViewById(R.id.button_new_message);
+        Button enviar = findViewById(R.id.enviar);
 
-        button_new_message.setOnClickListener((view -> {
-            startNewMSGActivity();
+        enviar.setOnClickListener((view -> {
+            startSendMessageActivity();
         }));
 
     }
 
-    private void startSMSActivity () {
-        
-    }
+    private void startSendMessageActivity () {
+        Intent intent = new Intent(this, SendMessage.class);
 
+        startActivity(intent);
+    }
 }
