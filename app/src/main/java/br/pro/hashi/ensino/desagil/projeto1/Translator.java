@@ -16,61 +16,249 @@ public class Translator {
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
-        this.root = new Node(' ');
-        Map <Character , Node> map = new HashMap<Character, Node >();
-        //map.put(' ',root);
+
+        Map<Character, Node> map = new HashMap<Character, Node>();
+        map.put(' ', root);
+
+        // Parte esquerda de E
         Node e = new Node('e');
-        this.root.setLeft(e);
-        map.put('e',new Node('e'));
-        this.root.setRight(new Node('t'));
-        map.put('-',root.getRight());
-        this.root.getLeft().setLeft(new Node('i'));
-        map.put('..',root.getLeft().getLeft());
-        this.root.getLeft().setRight(new Node('a'));
-        this.root.getRight().setLeft(new Node('n'));
-        this.root.getRight().setRight(new Node('m'));
-        this.root.getLeft().getLeft().setLeft(new Node('s'));
-        this.root.getLeft().getLeft().setRight(new Node('u'));
-        this.root.getLeft().getRight().setLeft(new Node('r'));
-        this.root.getLeft().getRight().setRight(new Node('w'));
-        this.root.getRight().getLeft().setLeft(new Node('d'));
-        this.root.getRight().getLeft().setRight(new Node('k'));
-        this.root.getRight().getRight().setLeft(new Node('g'));
-        this.root.getRight().getRight().setRight(new Node('o'));
-        this.root.getLeft().getLeft().getLeft().setLeft(new Node('h'));
-        this.root.getLeft().getLeft().getLeft().setRight(new Node('v'));
-        this.root.getLeft().getLeft().getRight().setLeft(new Node('f'));
-        this.root.getLeft().getRight().getLeft().setLeft(new Node('l'));
-        this.root.getLeft().getRight().getRight().setLeft(new Node('p'));
-        this.root.getLeft().getRight().getRight().setRight(new Node('j'));
-        this.root.getRight().getLeft().getLeft().setLeft(new Node('b'));
-        this.root.getRight().getLeft().getLeft().setRight(new Node('x'));
-        this.root.getRight().getLeft().getRight().setLeft(new Node('c'));
-        this.root.getRight().getLeft().getRight().setRight(new Node('y'));
-        this.root.getRight().getRight().getLeft().setLeft(new Node('z'));
-        this.root.getRight().getRight().getLeft().setRight(new Node('q'));
-        this.root.getLeft().getLeft().getLeft().getLeft().setLeft(new Node('5'));
-        this.root.getLeft().getLeft().getLeft().getLeft().setRight(new Node('4'));
-        this.root.getLeft().getLeft().getLeft().getRight().setRight(new Node('3'));
-        this.root.getLeft().getLeft().getRight().getRight().setRight(new Node('2'));
-        this.root.getLeft().getRight().getRight().getRight().setRight(new Node('1'));
-        this.root.getRight().getLeft().getLeft().getLeft().setLeft(new Node('6'));
-        this.root.getRight().getRight().getLeft().getLeft().setLeft(new Node('7'));
-        this.root.getRight().getRight().getRight().getLeft().setLeft(new Node('8'));
-        this.root.getRight().getRight().getRight().getRight().setLeft(new Node('9'));
-        this.root.getRight().getRight().getRight().getRight().setRight(new Node('0'));
+        e.setParent(root);
+        root.setLeft(e);
+        map.put('e', e);
+
+        Node i = new Node('i');
+        i.setParent(e);
+        e.setLeft(i);
+        map.put('i', i);
+
+        Node s = new Node('s');
+        s.setParent(i);
+        i.setLeft(s);
+        map.put('s', s);
+
+        Node h = new Node('h');
+        h.setParent(s);
+        s.setLeft(h);
+        map.put('h', h);
+
+        Node NumberFive = new Node('5');
+        NumberFive.setParent(h);
+        h.setLeft(NumberFive);
+        map.put('5', NumberFive);
+
+        Node NumberFour = new Node('4');
+        NumberFour.setParent(h);
+        h.setRight(NumberFour);
+        map.put('4', NumberFour);
+
+        Node v = new Node('v');
+        v.setParent(s);
+        s.setRight(v);
+        map.put('v', v);
+
+        Node NumberThree = new Node('3');
+        NumberThree.setParent(v);
+        v.setRight(NumberThree);
+        map.put('3', NumberThree);
+
+        Node u = new Node('u');
+        u.setParent(i);
+        i.setRight(u);
+        map.put('u', u);
+
+        Node f = new Node('f');
+        f.setParent(i);
+        i.setLeft(f);
+        map.put('f', f);
+
+        Node EmptyURight = new Node(' ');
+        EmptyURight.setParent(u);
+        u.setRight(EmptyURight);
+        map.put(' ', EmptyURight);
+
+        Node NumberTwo = new Node('2');
+        NumberTwo.setParent(EmptyURight);
+        EmptyURight.setRight(NumberTwo);
+        map.put('2', NumberTwo);
+
+        // Parte direita de E
+
+        Node a = new Node('a');
+        a.setParent(e);
+        e.setRight(a);
+        map.put('a',a);
+
+        Node r = new Node('r');
+        r.setParent(a);
+        a.setLeft(r);
+        map.put('r', r);
+
+        Node l = new Node('l');
+        l.setParent(r);
+        r.setLeft(l);
+        map.put('l', l);
+
+        Node EmptyRRight = new Node(' ');
+        EmptyRRight.setParent(r);
+        r.setRight(EmptyRRight);
+        map.put(' ', EmptyRRight);
+
+        Node SignalPlus = new Node('+');
+        SignalPlus.setParent(EmptyRRight);
+        EmptyRRight.setLeft(SignalPlus);
+        map.put('+', SignalPlus);
+
+        Node w = new Node('w');
+        w.setParent(a);
+        a.setRight(w);
+        map.put('w', w);
+
+        Node p = new Node('p');
+        p.setParent(w);
+        w.setLeft(p);
+        map.put('p', p);
+
+        Node j = new Node('j');
+        j.setParent(w);
+        w.setRight(j);
+        map.put('j', j);
+
+        Node NumberOne = new Node('1');
+        NumberOne.setParent(j);
+        j.setRight(NumberOne);
+        map.put('1', NumberOne);
+
+        Node t = new Node('t');
+        t.setParent(root);
+        root.setRight(t);
+        map.put('t', t);
+
+        Node n = new Node('n');
+        n.setParent(t);
+        t.setLeft(n);
+        map.put('n', n);
+
+        Node d = new Node('d');
+        d.setParent(n);
+        n.setLeft(d);
+        map.put('d', d);
+
+        Node b = new Node('b');
+        b.setParent(d);
+        d.setLeft(b);
+        map.put('b', b);
+
+        Node NumberSix = new Node('6');
+        NumberSix.setParent(b);
+        b.setLeft(NumberSix);
+        map.put('6', NumberSix);
+
+        Node SignalEquals = new Node('=');
+        SignalEquals.setParent(b);
+        b.setRight(SignalEquals);
+        map.put('=', SignalEquals);
+
+        Node x = new Node('x');
+        x.setParent(d);
+        d.setRight(x);
+        map.put('x', x);
+
+        Node SignalBar = new Node('/');
+        SignalBar.setParent(x);
+        x.setLeft(SignalBar);
+        map.put('/', SignalBar);
+
+        Node k = new Node('k');
+        k.setParent(n);
+        n.setRight(k);
+        map.put('k', k);
+
+        Node c = new Node('c');
+        c.setParent(k);
+        k.setLeft(c);
+        map.put('c', c);
+
+        Node y = new Node('y');
+        y.setParent(k);
+        k.setRight(y);
+        map.put('y', y);
+
+        Node m = new Node('m');
+        m.setParent(t);
+        t.setRight(m);
+        map.put('m', m);
+
+        Node g = new Node('g');
+        g.setParent(m);
+        m.setLeft(g);
+        map.put('g', g);
+
+        Node z = new Node('z');
+        z.setParent(g);
+        g.setLeft(z);
+        map.put('z', z);
+
+        Node q = new Node('q');
+        q.setParent(g);
+        g.setRight(q);
+        map.put('q', q);
+
+        Node o = new Node('o');
+        o.setParent(m);
+        m.setRight(o);
+        map.put('o', o);
+
+        Node EmptyOLeft = new Node(' ');
+        EmptyOLeft.setParent(o);
+        o.setLeft(EmptyOLeft);
+        map.put(' ', EmptyOLeft);
+
+        Node NumberEight = new Node('8');
+        NumberEight.setParent(EmptyOLeft);
+        EmptyOLeft.setLeft(NumberEight);
+        map.put('8', NumberEight);
+
+        Node EmptyORight = new Node(' ');
+        EmptyORight.setParent(o);
+        o.setRight(EmptyORight);
+        map.put(' ', EmptyORight);
+
+        Node NumberNine = new Node('9');
+        NumberNine.setParent(EmptyORight);
+        EmptyORight.setLeft(NumberNine);
+        map.put('9', NumberNine);
+
+        Node NumberZero = new Node('0');
+        NumberZero.setParent(EmptyORight);
+        EmptyORight.setRight(NumberZero);
+        map.put('0', NumberZero);
+
     }
 
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
-        return ' ';
+        Node previousLevel = root;
+        Node currentLevel;
+        LinkedList<String> morse = new LinkedList<String>();
+        for (int i=0; i <code.length();i++){
+            if (code.charAt(i)=='-'){
+                currentLevel = previousLevel.getRight();
+            }
+            else {
+                currentLevel = previousLevel.getLeft();
+            }
+            previousLevel = currentLevel;
+        }
+
+        return map.get(previousLevel.getValue()).getValue();
     }
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
+
         return " ";
     }
 
