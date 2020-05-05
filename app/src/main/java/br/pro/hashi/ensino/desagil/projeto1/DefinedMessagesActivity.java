@@ -14,12 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DefinedMessagesActivity<Static> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    static String  message;
-    TextView textView;
+    static String message;
 
-    static String getMessage(){
-
+    private String getMessage() {
         return message;
+    }
+
+    private void setMessage(String string) {
+        this.message = string;
     }
 
     @Override
@@ -27,21 +29,11 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defined_messages);
 
-        // EditText textMessage = findViewById(R.id.text_message);
-        // EditText textPhone = findViewById(R.id.text_phone)
-
         Spinner spinner = findViewById(R.id.spinner_messages);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.messages, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        message = spinner.getSelectedItem().toString();
-
-        if (savedInstanceState != null) {
-            message = savedInstanceState.getString("GAME_STATE_KEY");
-        }
-
-        textView = (TextView) findViewById(R.id.text_view);
 
         Button enviar = findViewById(R.id.enviar);
 
@@ -51,19 +43,10 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
 
     }
 
-    public void onSaveInstanceState(Bundle outState){
-        outState.putString("GAME_STATE_KEY", message);
-
-    }
-
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
-    }
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
+        setMessage(text);
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
@@ -72,8 +55,8 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
     }
 
     private void startSendMessageActivity() {
-        Intent intent = new Intent(this, SendMessage.class);
-        intent.putExtra("arg", this.message);
+        Intent intent = new Intent(DefinedMessagesActivity.this, SendMessage.class);
+        intent.putExtra("message", getMessage());
         startActivity(intent);
     }
 

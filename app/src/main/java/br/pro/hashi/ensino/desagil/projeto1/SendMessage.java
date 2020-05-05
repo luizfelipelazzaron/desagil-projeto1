@@ -27,8 +27,11 @@ public class SendMessage extends AppCompatActivity {
 
         Button buttonSend = findViewById(R.id.button_send);
 
+        String message = getIntent().getExtras().getString("message");
+
+        showToast(message);
+
         buttonSend.setOnClickListener((view) -> {
-            String message = DefinedMessagesActivity.getMessage();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");
@@ -38,8 +41,6 @@ public class SendMessage extends AppCompatActivity {
             // String phone = textPhone.getText().toString();
             String phone = "+5511988284562";
 
-            // Esta verificação do número de telefone é bem
-            // rígida, pois exige até mesmo o código do país.
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                 showToast("Número inválido!");
                 return;
@@ -47,15 +48,10 @@ public class SendMessage extends AppCompatActivity {
                 showToast("Mensagem enviada");
             }
             showToast(message);
-            // Enviar uma mensagem de SMS. Por simplicidade,
-            // não estou verificando se foi mesmo enviada,
-            // mas é possível fazer uma versão que verifica.
+
             SmsManager manager = SmsManager.getDefault();
             manager.sendTextMessage(phone, null, message, null, null);
 
-            // Limpar o campo para nenhum engraçadinho
-            // ficar apertando o botão várias vezes.
-            // textPhone.setText("");
         });
 
     }
