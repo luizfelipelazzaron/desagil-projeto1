@@ -41,7 +41,7 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
             message = savedInstanceState.getString("GAME_STATE_KEY");
         }
 
-        textView = (TextView) findViewById(R.id.text_view) ;
+        textView = (TextView) findViewById(R.id.text_view);
 
         Button enviar = findViewById(R.id.enviar);
 
