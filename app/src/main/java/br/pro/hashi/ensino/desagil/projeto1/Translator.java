@@ -7,11 +7,11 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Translator {
     private Node root;
     private HashMap<Character, Node> map;
-
 
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
@@ -26,14 +26,10 @@ public class Translator {
         e.setParent(root);
         t.setParent(root);
 
-
-        this.root.setLeft(new Node('e'));
-        this.root.setRight(new Node('t'));
         this.root.getLeft().setLeft(new Node('i'));
         this.root.getLeft().setRight(new Node('a'));
         this.root.getRight().setLeft(new Node('n'));
         this.root.getRight().setRight(new Node('m'));
-
         this.root.getLeft().getLeft().setLeft(new Node('s'));
         this.root.getLeft().getLeft().setRight(new Node('u'));
         this.root.getLeft().getRight().setLeft(new Node('r'));
@@ -42,7 +38,6 @@ public class Translator {
         this.root.getRight().getLeft().setRight(new Node('k'));
         this.root.getRight().getRight().setLeft(new Node('g'));
         this.root.getRight().getRight().setRight(new Node('o'));
-
         this.root.getLeft().getLeft().getLeft().setLeft(new Node('h'));
         this.root.getLeft().getLeft().getLeft().setRight(new Node('v'));
         this.root.getLeft().getLeft().getRight().setLeft(new Node('f'));
@@ -55,7 +50,6 @@ public class Translator {
         this.root.getRight().getLeft().getRight().setRight(new Node('y'));
         this.root.getRight().getRight().getLeft().setLeft(new Node('z'));
         this.root.getRight().getRight().getLeft().setRight(new Node('q'));
-
         this.root.getLeft().getLeft().getLeft().getLeft().setLeft(new Node('5'));
         this.root.getLeft().getLeft().getLeft().getLeft().setRight(new Node('4'));
         this.root.getLeft().getLeft().getLeft().getRight().setRight(new Node('3'));
@@ -75,7 +69,6 @@ public class Translator {
         return ' ';
     }
 
-
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
@@ -83,15 +76,15 @@ public class Translator {
     }
 
 
-    // Este método deve permanecer como está.
+    // Este método deve permanecer como está. Então ficará.
     public String charToMorse(char c) {
         return charToMorse(map.get(c));
     }
 
-
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
+
         LinkedList<String> morseCode = new LinkedList();
 
         morseCode.add(".");

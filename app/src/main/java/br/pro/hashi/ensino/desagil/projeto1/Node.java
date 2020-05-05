@@ -3,7 +3,6 @@
  */
 
 package br.pro.hashi.ensino.desagil.projeto1;
-
 public class Node {
     private char value;
     private Node parent;
