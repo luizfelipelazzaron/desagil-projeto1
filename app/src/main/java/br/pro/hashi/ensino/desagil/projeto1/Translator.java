@@ -47,12 +47,12 @@ public class Translator {
         this.root.getLeft().getLeft().getLeft().getLeft().setRight(new Node('4'));
         this.root.getLeft().getLeft().getLeft().getRight().setRight(new Node('3'));
         this.root.getLeft().getLeft().getRight().getRight().setRight(new Node('2'));
-        this.root.getLeft().getRight().getRight().getRight().setRight(new Node('+'));
-        this.root.getRight().getLeft().getLeft().getLeft().setLeft(new Node('1'));
-        this.root.getRight().getRight().getLeft().getLeft().setLeft(new Node('6'));
-        this.root.getRight().getRight().getRight().getLeft().setLeft(new Node('='));
-        this.root.getRight().getRight().getRight().getRight().setLeft(new Node('/'));
-        this.root.getRight().getRight().getRight().getRight().setRight(new Node('7'));
+        this.root.getLeft().getRight().getRight().getRight().setRight(new Node('1'));
+        this.root.getRight().getLeft().getLeft().getLeft().setLeft(new Node('6'));
+        this.root.getRight().getRight().getLeft().getLeft().setLeft(new Node('7'));
+        this.root.getRight().getRight().getRight().getLeft().setLeft(new Node('8'));
+        this.root.getRight().getRight().getRight().getRight().setLeft(new Node('9'));
+        this.root.getRight().getRight().getRight().getRight().setRight(new Node('0'));
     }
 
 
