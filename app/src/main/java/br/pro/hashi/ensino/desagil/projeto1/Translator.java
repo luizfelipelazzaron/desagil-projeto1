@@ -42,25 +42,25 @@ public class Translator {
         s.setLeft(h);
         map.put('h', h);
 
-        Node cinco = new Node('5');
-        cinco.setParent(h);
-        h.setLeft(cinco);
-        map.put('5', cinco);
+        Node NumberFive = new Node('5');
+        NumberFive.setParent(h);
+        h.setLeft(NumberFive);
+        map.put('5', NumberFive);
 
-        Node quatro = new Node('4');
-        quatro.setParent(h);
-        h.setRight(quatro);
-        map.put('4', quatro);
+        Node NumberFour = new Node('4');
+        NumberFour.setParent(h);
+        h.setRight(NumberFour);
+        map.put('4', NumberFour);
 
         Node v = new Node('v');
         v.setParent(s);
         s.setRight(v);
         map.put('v', v);
 
-        Node tres = new Node('3');
-        tres.setParent(v);
-        v.setRight(tres);
-        map.put('3', tres);
+        Node NumberThree = new Node('3');
+        NumberThree.setParent(v);
+        v.setRight(NumberThree);
+        map.put('3', NumberThree);
 
         Node u = new Node('u');
         u.setParent(i);
@@ -72,30 +72,15 @@ public class Translator {
         i.setLeft(f);
         map.put('f', f);
 
-        Node EmptyFLeft = new Node(' ');
-        EmptyFLeft.setParent(f);
-        f.setLeft(EmptyFLeft);
-        map.put(' ', EmptyFLeft);
+        Node EmptyURight = new Node(' ');
+        EmptyURight.setParent(u);
+        u.setRight(EmptyURight);
+        map.put(' ', EmptyURight);
 
-        Node EmptyFRight = new Node(' ');
-        EmptyFRight.setParent(f);
-        f.setRight(EmptyFRight);
-        map.put(' ', EmptyFRight);
-
-        Node EmptyU = new Node(' ');
-        EmptyU.setParent(u);
-        u.setRight(EmptyU);
-        map.put(' ', EmptyU);
-
-        Node EmptyULeft = new Node(' ');
-        EmptyULeft.setParent(EmptyU);
-        EmptyU.setRight(EmptyULeft);
-        map.put(' ', EmptyULeft);
-
-        Node dois = new Node('2');
-        dois.setParent(EmptyU);
-        EmptyU.setLeft(dois);
-        map.put('2', dois);
+        Node NumberTwo = new Node('2');
+        NumberTwo.setParent(EmptyURight);
+        EmptyURight.setRight(NumberTwo);
+        map.put('2', NumberTwo);
 
         // Parte direita de E
 
@@ -114,30 +99,15 @@ public class Translator {
         r.setLeft(l);
         map.put('l', l);
 
-        Node EmptyLLeft = new Node(' ');
-        EmptyLLeft.setParent(l);
-        l.setLeft(EmptyLLeft);
-        map.put(' ', EmptyLLeft);
-
-        Node EmptyLRight = new Node(' ');
-        EmptyLRight.setParent(l);
-        l.setRight(EmptyLRight);
-        map.put(' ', EmptyLRight);
-
-        Node EmptyR = new Node(' ');
-        EmptyR.setParent(r);
-        r.setRight(EmptyR);
-        map.put(' ', EmptyR);
+        Node EmptyRRight = new Node(' ');
+        EmptyRRight.setParent(r);
+        r.setRight(EmptyRRight);
+        map.put(' ', EmptyRRight);
 
         Node SignalPlus = new Node('+');
-        SignalPlus.setParent(EmptyR);
-        EmptyR.setLeft(SignalPlus);
+        SignalPlus.setParent(EmptyRRight);
+        EmptyRRight.setLeft(SignalPlus);
         map.put('+', SignalPlus);
-
-        Node EmptyRRight = new Node(' ');
-        EmptyRRight.setParent(EmptyR);
-        EmptyR.setRight(EmptyRRight);
-        map.put(' ', EmptyRRight);
 
         Node w = new Node('w');
         w.setParent(a);
@@ -149,25 +119,10 @@ public class Translator {
         w.setLeft(p);
         map.put('p', p);
 
-        Node EmptyPLeft = new Node(' ');
-        EmptyPLeft.setParent(p);
-        p.setLeft(EmptyPLeft);
-        map.put(' ', EmptyPLeft);
-
-        Node EmptyPRight = new Node(' ');
-        EmptyPRight.setParent(p);
-        p.setRight(EmptyPRight);
-        map.put(' ', EmptyPRight);
-
         Node j = new Node('j');
         j.setParent(w);
         w.setRight(j);
         map.put('j', j);
-
-        Node EmptyJLeft = new Node(' ');
-        EmptyJLeft.setParent(j);
-        j.setLeft(EmptyJLeft);
-        map.put(' ', EmptyJLeft);
 
         Node NumberOne = new Node('1');
         NumberOne.setParent(j);
@@ -236,8 +191,49 @@ public class Translator {
 
         Node g = new Node('g');
         g.setParent(m);
-        m.setRight(g);
+        m.setLeft(g);
         map.put('g', g);
+
+        Node z = new Node('z');
+        z.setParent(g);
+        g.setLeft(z);
+        map.put('z', z);
+
+        Node q = new Node('q');
+        q.setParent(g);
+        g.setRight(q);
+        map.put('q', q);
+
+        Node o = new Node('o');
+        o.setParent(m);
+        m.setRight(o);
+        map.put('o', o);
+
+        Node EmptyOLeft = new Node(' ');
+        EmptyOLeft.setParent(o);
+        o.setLeft(EmptyOLeft);
+        map.put(' ', EmptyOLeft);
+
+        Node NumberEight = new Node('8');
+        NumberEight.setParent(EmptyOLeft);
+        EmptyOLeft.setLeft(NumberEight);
+        map.put('8', NumberEight);
+
+        Node EmptyORight = new Node(' ');
+        EmptyORight.setParent(o);
+        o.setRight(EmptyORight);
+        map.put(' ', EmptyORight);
+
+        Node NumberNine = new Node('9');
+        NumberNine.setParent(EmptyORight);
+        EmptyORight.setLeft(NumberNine);
+        map.put('9', NumberNine);
+
+        Node NumberZero = new Node('0');
+        NumberZero.setParent(EmptyORight);
+        EmptyORight.setRight(NumberZero);
+        map.put('0', NumberZero);
+
 
 
 
