@@ -233,7 +233,6 @@ public class Translator {
         NumberZero.setParent(EmptyORight);
         EmptyORight.setRight(NumberZero);
         map.put('0', NumberZero);
-
     }
 
 
@@ -253,7 +252,7 @@ public class Translator {
             previousLevel = currentLevel;
         }
 
-        return map.get(previousLevel.getValue()).getValue();
+        return previousLevel.getValue();
     }
 
     // Você deve mudar o recheio deste método,
@@ -275,4 +274,10 @@ public class Translator {
         LinkedList<String> linkedlist = new LinkedList<>();
         return linkedlist;
     }
+
+    public static void main(String[] args) {
+        Translator tree = new Translator();
+        tree.getCodes();
+    }
+
 }

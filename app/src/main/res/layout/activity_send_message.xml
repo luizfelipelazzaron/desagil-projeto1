@@ -3,15 +3,25 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding='30dp'
+    android:layout_gravity="center"
     android:columnCount="1"
     android:rowCount="3"
     tools:context=".SendMessage">
+
+    <Button
+        android:id="@+id/cuidadorShortcut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Enviar para o cuidador" />
 
 
     <EditText
         android:id="@+id/text_phone"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:hint="Telefone"
         android:inputType="phone" />
 
@@ -21,11 +31,5 @@
         android:layout_height="wrap_content"
         android:text="Enviar" />
 
-    <Button
-        android:id="@+id/cuidadorShortcut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="Enviar para o cuidador" />
 
 </GridLayout>

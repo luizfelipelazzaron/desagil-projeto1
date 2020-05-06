@@ -10,7 +10,7 @@
     tools:context=".NewMessage">
 
     <TextView
-        android:id="@+id/text_phone"
+        android:id="@+id/text_message"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginBottom="50dp"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="slash" />
-        
+
         <Button
             android:id="@+id/space"
             android:layout_width="match_parent"
@@ -79,6 +79,6 @@
         android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Enviar" />
+        android:text="Escolher destinatário" />
 
 </GridLayout>
