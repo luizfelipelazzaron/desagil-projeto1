@@ -13,11 +13,11 @@ public class Translator {
     private Node root;
     private HashMap<Character, Node> map;
 
-
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
         this.root = new Node('#');
+
         Map<Character, Node> map = new HashMap<Character, Node>();
         map.put('#', root);
 
@@ -240,26 +240,39 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
-        return ' ';
-    }
+        Node previousLevel = root;
+        Node currentLevel;
+        LinkedList<String> morse = new LinkedList<String>();
+        for (int i=0; i <code.length();i++){
+            if (code.charAt(i)=='-'){
+                currentLevel = previousLevel.getRight();
+            }
+            else {
+                currentLevel = previousLevel.getLeft();
+            }
+            previousLevel = currentLevel;
+        }
 
+        return map.get(previousLevel.getValue()).getValue();
+    }
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
+
         return " ";
     }
 
 
-    // Este método deve permanecer como está.
+    // Este método deve permanecer como está. Então ficará.
     public String charToMorse(char c) {
         return charToMorse(map.get(c));
     }
 
-
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        LinkedList<String> linkedlist = new LinkedList<>();
+        return linkedlist;
     }
 }
