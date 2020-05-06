@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Projeto1</string>
     <string-array name="messages">
-        <item>Você poderia pegar um copo com água?</item>
+        <item>Você pode pegar água?</item>
         <item>A vista está bonita hoje</item>
         <item>Obrigado!</item>
         <item>Está na hora do remédio?</item>
-        <item>Gostaria de conhecer um lugar diferente hoje</item>
+        <item>Como você está?</item>
         <item>Estou bem.</item>
         <item>Não estou me sentindo muito bem</item>
     </string-array>

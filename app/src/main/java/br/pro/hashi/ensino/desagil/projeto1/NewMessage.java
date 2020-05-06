@@ -133,7 +133,6 @@ public class NewMessage extends AppCompatActivity {
             this.preview.append(s);
         }
 
-
     }
 
 
