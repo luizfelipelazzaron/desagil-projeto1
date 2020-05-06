@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class NewMessage extends AppCompatActivity {
 
@@ -21,9 +22,47 @@ public class NewMessage extends AppCompatActivity {
 
         setContentView(R.layout.activity_new_message);
 
-        Button enviar = findViewById(R.id.enviar);
+        TextView message = findViewById(R.id.text_message);
+        Button buttonSlash = findViewById(R.id.slash);
+        Button buttonSpace = findViewById(R.id.space);
+        Button buttonDash = findViewById(R.id.dash);
+        Button buttonDot = findViewById(R.id.dot);
+        Button buttonBackspace = findViewById(R.id.backspace);
+        Button send = findViewById(R.id.enviar);
 
-        enviar.setOnClickListener((view -> {
+        buttonSlash.setOnClickListener((view) -> {
+
+            message.append("/");
+
+        });
+
+        buttonSpace.setOnClickListener((view) -> {
+
+            message.append(" ");
+
+        });
+
+        buttonDash.setOnClickListener((view) -> {
+
+            message.append("-");
+
+        });
+
+        buttonDot.setOnClickListener((view) -> {
+
+            message.append(".");
+
+        });
+
+        buttonBackspace.setOnClickListener((view) -> {
+
+            message.append("NAOOOO");
+
+        });
+
+
+
+        send.setOnClickListener((view -> {
             startSendMessageActivity();
         }));
     }

@@ -16,6 +16,7 @@ public class Translator {
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
+
     }
 
 
@@ -42,6 +43,16 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        LinkedList<String> morseCode = new LinkedList();
+
+
+
+        return morseCode;
     }
+
+    public static void main(String[] args) {
+        Translator tree = new Translator();
+        tree.getCodes();
+    }
+
 }
