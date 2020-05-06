@@ -7,20 +7,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DefinedMessagesActivity<Static> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    static String  message;
-    TextView textView;
-
-    static String getMessage(){
-
-        return message;
-    }
+    String  message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,36 +28,24 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        message = spinner.getSelectedItem().toString();
 
-        if (savedInstanceState != null) {
-            message = savedInstanceState.getString("GAME_STATE_KEY");
-        }
+        Button send = findViewById(R.id.enviar);
 
-        textView = (TextView) findViewById(R.id.text_view);
-
-        Button enviar = findViewById(R.id.enviar);
-
-        enviar.setOnClickListener((view -> {
+        send.setOnClickListener((view -> {
             startSendMessageActivity();
         }));
 
     }
 
-    public void onSaveInstanceState(Bundle outState){
-        outState.putString("GAME_STATE_KEY", message);
-
+    private void setMessage(String message){
+        this.message = message;
     }
-
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
-    }
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        setMessage(text);
     }
 
     @Override
@@ -73,7 +54,7 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
 
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
-        intent.putExtra("arg", this.message);
+        intent.putExtra("arg", message);
         startActivity(intent);
     }
 
