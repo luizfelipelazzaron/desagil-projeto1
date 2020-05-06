@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class NewMessage extends AppCompatActivity {
+    Translator translator;
+    String morse;
 
     private static final int REQUEST_SEND_SMS = 0;
 
@@ -31,46 +33,46 @@ public class NewMessage extends AppCompatActivity {
         Button send = findViewById(R.id.enviar);
 
         buttonSlash.setOnClickListener((view) -> {
-
             message.append("/");
-
         });
 
         buttonSpace.setOnClickListener((view) -> {
-
             message.append(" ");
-
         });
 
         buttonDash.setOnClickListener((view) -> {
-
             message.append("-");
-
         });
 
         buttonDot.setOnClickListener((view) -> {
-
             message.append(".");
-
         });
 
         buttonBackspace.setOnClickListener((view) -> {
-
             message.append("NAOOOO");
-
         });
 
-
-
         send.setOnClickListener((view -> {
+            // transforma a message em uma string
+            String newMessage = message.getText().toString();
+            inputMorse(newMessage);
             startSendMessageActivity();
         }));
     }
 
+    private void setMorse(String morse) {
+        this.morse = morse;
+    }
+
+    private void inputMorse(String message) {
+       char morseOutput = translator.morseToChar(message);
+       String s = String.valueOf(morseOutput);
+       setMorse(s);
+    }
 
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
-
+        intent.putExtra("arg", morse);
         startActivity(intent);
     }
 }
