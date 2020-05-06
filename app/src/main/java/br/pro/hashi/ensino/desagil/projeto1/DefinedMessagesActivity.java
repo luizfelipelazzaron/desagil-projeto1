@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DefinedMessagesActivity<Static> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String  message;
+    private String message;
 
 
     @Override
@@ -30,14 +30,12 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
 
         Button send = findViewById(R.id.enviar);
 
-        send.setOnClickListener((view -> {
-            startSendMessageActivity();
-        }));
+        send.setOnClickListener((view -> startSendMessageActivity()));
 
     }
 
 
-    private void setMessage(String message){
+    private void setMessage(String message) {
         this.message = message;
     }
 

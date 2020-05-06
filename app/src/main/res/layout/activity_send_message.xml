@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding='30dp'
     android:layout_gravity="center"
     android:columnCount="1"
+    android:padding='30dp'
     android:rowCount="3"
     tools:context=".SendMessage">
 
@@ -15,24 +15,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
+        android:text="Enviar para o cuidador"
         android:textSize="20sp"
-        android:text="Enviar para o cuidador" />
+        tools:ignore="HardcodedText" />
 
 
     <EditText
         android:id="@+id/text_phone"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Telefone"
+        android:inputType="phone"
         android:textSize="20sp"
-        android:inputType="phone" />
+        tools:ignore="Autofill,HardcodedText" />
 
     <Button
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Enviar"
         android:textSize="20sp"
-        android:text="Enviar" />
+        tools:ignore="HardcodedText" />
 
 
 </GridLayout>
