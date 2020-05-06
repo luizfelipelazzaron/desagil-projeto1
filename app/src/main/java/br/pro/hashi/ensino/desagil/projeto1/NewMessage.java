@@ -68,6 +68,7 @@ public class NewMessage extends AppCompatActivity {
         }));
     }
 
+
     private void setMessage(String string) {
         if (string.equals("backspace")) {
             if (this.temp != null && this.temp.length() > 0) {
@@ -131,6 +132,8 @@ public class NewMessage extends AppCompatActivity {
             setMorse(outraMessage);
             this.preview.append(s);
         }
+
+
     }
 
 
