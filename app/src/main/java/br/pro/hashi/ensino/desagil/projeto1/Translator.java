@@ -5,15 +5,15 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.util.Log;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Stack;
 
-public class Translator {
-    private Node root;
+@SuppressWarnings({"SuspiciousNameCombination", "unused"})
+class Translator {
+    private final Node root;
+    @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection", "unused"})
     private HashMap<Character, Node> map;
 
     // Você deve mudar o recheio do construtor,
@@ -21,7 +21,8 @@ public class Translator {
     public Translator() {
         this.root = new Node('#');
 
-        Map<Character, Node> map = new HashMap<Character, Node>();
+        //noinspection MismatchedQueryAndUpdateOfCollection
+        Map<Character, Node> map = new HashMap<>();
         map.put('#', root);
 
         // Parte esquerda de E
@@ -278,7 +279,8 @@ public class Translator {
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
-    private String charToMorse(Node node) {
+    @SuppressWarnings("SameReturnValue")
+    private String charToMorse(@SuppressWarnings("unused") Node node) {
 
         return " ";
     }
@@ -292,7 +294,9 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
+        //noinspection unchecked
         LinkedList<String> morseCode = new LinkedList();
+        //noinspection MismatchedQueryAndUpdateOfCollection
         Stack<Node> stack = new Stack<>();
         stack.push(this.root);
 
