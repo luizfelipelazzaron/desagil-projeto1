@@ -5,9 +5,12 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Stack;
 
 public class Translator {
     private Node root;
@@ -68,8 +71,8 @@ public class Translator {
         map.put('u', u);
 
         Node f = new Node('f');
-        f.setParent(i);
-        i.setLeft(f);
+        f.setParent(u);
+        u.setLeft(f);
         map.put('f', f);
 
         Node EmptyURight = new Node(' ');
@@ -87,7 +90,7 @@ public class Translator {
         Node a = new Node('a');
         a.setParent(e);
         e.setRight(a);
-        map.put('a',a);
+        map.put('a', a);
 
         Node r = new Node('r');
         r.setParent(a);
@@ -199,6 +202,11 @@ public class Translator {
         g.setLeft(z);
         map.put('z', z);
 
+        Node NumberSeven = new Node('7');
+        NumberSeven.setParent(z);
+        z.setLeft(NumberSeven);
+        map.put('7', NumberSeven);
+
         Node q = new Node('q');
         q.setParent(g);
         g.setRight(q);
@@ -240,20 +248,32 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
-        Node previousLevel = root;
-        Node currentLevel;
-        LinkedList<String> morse = new LinkedList<String>();
-        for (int i=0; i <code.length();i++){
-            if (code.charAt(i)=='-'){
-                currentLevel = previousLevel.getRight();
+        if (code != null) {
+            Node previousLevel = root;
+            Node currentLevel = new Node(' ');
+            String output;
+            for (int i = 0; i < code.length(); i++) {
+                if (code.charAt(i) == '-') {
+                    if (previousLevel.getRight() != null) {
+                        currentLevel = previousLevel.getRight();
+                    } else {
+                        return '#';
+                    }
+                }
+                if (code.charAt(i) == '.') {
+                    if (previousLevel.getLeft() != null) {
+                        currentLevel = previousLevel.getLeft();
+                    } else {
+                        return '#';
+                    }
+                }
+                previousLevel = currentLevel;
             }
-            else {
-                currentLevel = previousLevel.getLeft();
-            }
-            previousLevel = currentLevel;
+//        Log.d( "myApp", Character.toString(previousLevel.getValue()) );
+            return previousLevel.getValue();
+        } else {
+            return 'a';
         }
-
-        return previousLevel.getValue();
     }
 
     // Você deve mudar o recheio deste método,
@@ -273,6 +293,16 @@ public class Translator {
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
         LinkedList<String> morseCode = new LinkedList();
+        Stack<Node> stack = new Stack<>();
+        stack.push(this.root);
+
+//        while (!stack.isEmpty()) {
+//            Node node = stack.peek();
+//            Node left = node.getLeft();
+//            Node right = node.getRight();
+//
+//
+//        }
 
         return morseCode;
     }
