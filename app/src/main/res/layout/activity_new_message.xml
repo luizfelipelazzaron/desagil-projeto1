@@ -6,64 +6,63 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
     android:columnCount="1"
+    android:padding="30dp"
     android:rowCount="3"
     tools:context=".NewMessage">
 
 
     <TextView
         android:id="@+id/preview"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:textAlignment="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/text_message"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:textAlignment="center"
-        android:textSize="20sp"/>
-
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
         tools:context=".MainActivity">
 
         <Button
             android:id="@+id/slash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="slash" />
+            android:text="/"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/space"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="space" />
+            android:text="Espaço"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/dash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="dash" />
+            android:text="-"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/dot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="dot" />
+            android:text="."
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -73,20 +72,16 @@
         android:id="@+id/backspace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:text="apagar" />
+        android:text="apagar"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/enviar"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Escolher destinatário" />
+        android:layout_marginTop="50dp"
+        android:text="Escolher destinatário"
+        android:textSize="20sp" />
 
 </GridLayout>

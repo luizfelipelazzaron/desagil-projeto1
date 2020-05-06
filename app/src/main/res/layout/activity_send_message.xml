@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
+        android:textSize="20sp"
         android:text="Enviar para o cuidador" />
 
 
@@ -23,12 +24,14 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="Telefone"
+        android:textSize="20sp"
         android:inputType="phone" />
 
     <Button
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:text="Enviar" />
 
 
