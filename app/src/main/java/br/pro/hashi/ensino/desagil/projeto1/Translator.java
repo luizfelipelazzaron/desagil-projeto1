@@ -17,9 +17,9 @@ public class Translator {
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
-        this.root = new Node(' ');
+        this.root = new Node('#');
         Map<Character, Node> map = new HashMap<Character, Node>();
-        map.put(' ', root);
+        map.put('#', root);
 
         // Parte esquerda de E
         Node e = new Node('e');
@@ -233,10 +233,6 @@ public class Translator {
         NumberZero.setParent(EmptyORight);
         EmptyORight.setRight(NumberZero);
         map.put('0', NumberZero);
-
-
-
-
 
     }
 
