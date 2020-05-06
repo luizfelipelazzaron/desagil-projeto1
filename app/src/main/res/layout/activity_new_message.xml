@@ -5,9 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
+    android:padding="30dp"
     android:columnCount="1"
     android:rowCount="3"
     tools:context=".NewMessage">
+
+    <TextView
+    android:id="@+id/preview"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="50dp"
+    android:textAlignment="center"
+    android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/text_message"
@@ -15,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="50dp"
         android:textAlignment="center"
+        android:textStyle="bold"
         android:textSize="20sp"
         android:hint="Mensagem"
         android:inputType="phone" />
@@ -25,8 +35,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         tools:context=".MainActivity">
 
         <Button
@@ -34,28 +42,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="slash" />
+            android:text="/" />
 
         <Button
             android:id="@+id/space"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="space" />
+            android:text="Espaço" />
 
         <Button
             android:id="@+id/dash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="dash" />
+            android:text="-" />
 
         <Button
             android:id="@+id/dot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="dot" />
+            android:text="." />
 
 
     </LinearLayout>
@@ -65,8 +73,6 @@
         android:id="@+id/backspace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:text="apagar" />
@@ -75,8 +81,6 @@
         android:id="@+id/enviar"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Escolher destinatário" />

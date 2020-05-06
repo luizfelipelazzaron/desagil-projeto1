@@ -33,24 +33,15 @@ public class SendMessage extends AppCompatActivity {
             // String phone = textPhone.getText().toString();
             String phone = "+5511988284562";
 
-            // Esta verificação do número de telefone é bem
-            // rígida, pois exige até mesmo o código do país.
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                 showToast("Número cadastrado inválido!");
                 return;
             } else {
-                showToast("Mensagem enviada para o cuidador");
+                showToast("Mensagem enviada para o cuidador!");
             }
-
-            // Enviar uma mensagem de SMS. Por simplicidade,
-            // não estou verificando se foi mesmo enviada,
-            // mas é possível fazer uma versão que verifica.
             SmsManager manager = SmsManager.getDefault();
             manager.sendTextMessage(phone, null, message, null, null);
 
-            // Limpar o campo para nenhum engraçadinho
-            // ficar apertando o botão várias vezes.
-            // textPhone.setText("");
         });
 
         buttonSendGeneric.setOnClickListener((view) -> {
@@ -68,10 +59,10 @@ public class SendMessage extends AppCompatActivity {
             // Esta verificação do número de telefone é bem
             // rígida, pois exige até mesmo o código do país.
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phoneValue)) {
-                showToast(phoneValue);
+                showToast("Número  inválido!");
                 return;
             } else {
-                showToast("Mensagem enviada para " + phoneValue);
+                showToast("Mensagem enviada para " + phoneValue + " !");
             }
 
             // Enviar uma mensagem de SMS. Por simplicidade,

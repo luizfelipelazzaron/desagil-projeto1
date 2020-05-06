@@ -25,11 +25,12 @@
 
     <Spinner
         android:id="@+id/spinner_messages"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:spinnerMode="dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#d9d9d9"
         android:entries="@array/messages"
         android:theme="@style/SpinnerTheme"
@@ -38,9 +39,7 @@
     <Button
         android:id="@+id/enviar"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Escolher destinatário" />
