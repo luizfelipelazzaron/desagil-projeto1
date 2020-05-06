@@ -25,7 +25,6 @@
 
     <Spinner
         android:id="@+id/spinner_messages"
-
         android:spinnerMode="dropdown"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
@@ -35,7 +34,6 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#d9d9d9"
         android:entries="@array/messages"
-        android:spinnerMode="dialog"
         android:textSize="20sp"
         android:theme="@style/SpinnerTheme" />
 
@@ -45,9 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Escolher destinatário"
-        android:textSize="20sp"
-        android:text="Escolher destinatário" />
-        tools:ignore="HardcodedText" />
-
+        android:textSize="20sp" />
 
 </GridLayout>
