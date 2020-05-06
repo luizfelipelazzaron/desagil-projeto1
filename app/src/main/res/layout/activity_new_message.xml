@@ -9,15 +9,23 @@
     android:rowCount="3"
     tools:context=".NewMessage">
 
+
+    <TextView
+        android:id="@+id/preview"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
+
     <TextView
         android:id="@+id/text_message"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginBottom="50dp"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:hint="Mensagem"
-        android:inputType="phone" />
+        android:textSize="20sp"/>
+
 
 
     <LinearLayout
