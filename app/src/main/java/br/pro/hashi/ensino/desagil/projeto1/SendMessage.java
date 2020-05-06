@@ -37,9 +37,8 @@ public class SendMessage extends AppCompatActivity {
                 showToast("Número cadastrado inválido!");
                 return;
             } else {
-                showToast("Mensagem enviada para o cuidador");
+                showToast("Mensagem enviada para o cuidador!");
             }
-            showToast(message);
             SmsManager manager = SmsManager.getDefault();
             manager.sendTextMessage(phone, null, message, null, null);
 
@@ -60,10 +59,10 @@ public class SendMessage extends AppCompatActivity {
             // Esta verificação do número de telefone é bem
             // rígida, pois exige até mesmo o código do país.
             if (!PhoneNumberUtils.isGlobalPhoneNumber(phoneValue)) {
-                showToast(phoneValue);
+                showToast("Número  inválido!");
                 return;
             } else {
-                showToast("Mensagem enviada para " + phoneValue);
+                showToast("Mensagem enviada para " + phoneValue + " !");
             }
 
             // Enviar uma mensagem de SMS. Por simplicidade,

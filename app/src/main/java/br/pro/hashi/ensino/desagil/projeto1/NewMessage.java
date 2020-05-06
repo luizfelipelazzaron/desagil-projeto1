@@ -49,15 +49,26 @@ public class NewMessage extends AppCompatActivity {
         });
 
         buttonBackspace.setOnClickListener((view) -> {
-            message.append("NAOOOO");
+
+            String receivedMessage = message.getText().toString();
+            String erasedMessage = erase(receivedMessage);
+            message.setText(erasedMessage);
+
         });
 
         send.setOnClickListener((view -> {
             // transforma a message em uma string
-            String newMessage = message.getText().toString();
-            inputMorse(newMessage);
+            morse = message.getText().toString();
+            //inputMorse(newMessage);
             startSendMessageActivity();
         }));
+    }
+
+    public String erase(String string) {
+        if (string != null && string.length() > 0) {
+            string = string.substring(0, string.length() - 1);
+        }
+        return string;
     }
 
     private void setMorse(String morse) {
@@ -67,7 +78,7 @@ public class NewMessage extends AppCompatActivity {
     private void inputMorse(String message) {
        char morseOutput = translator.morseToChar(message);
        String s = String.valueOf(morseOutput);
-       setMorse(s);
+       setMorse(message);
     }
 
     private void startSendMessageActivity() {
