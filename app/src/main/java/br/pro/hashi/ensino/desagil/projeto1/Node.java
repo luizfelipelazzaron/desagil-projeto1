@@ -3,8 +3,10 @@
  */
 
 package br.pro.hashi.ensino.desagil.projeto1;
+
 public class Node {
-    private char value;
+    private final char value;
+    @SuppressWarnings("unused")
     private Node parent;
     private Node left;
     private Node right;
@@ -20,9 +22,11 @@ public class Node {
         return value;
     }
 
-    public Node getParent() {
-        return parent;
-    }
+// --Commented out by Inspection START (5/6/2020 12:30 PM):
+//    public Node getParent() {
+//        return parent;
+//    }
+// --Commented out by Inspection STOP (5/6/2020 12:30 PM)
 
     public void setParent(Node parent) {
         this.parent = parent;

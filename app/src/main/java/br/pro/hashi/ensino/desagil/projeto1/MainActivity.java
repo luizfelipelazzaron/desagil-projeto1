@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void startNewMSGActivity () {
-        Intent intent = new Intent (this, NewMessage.class);
+    private void startNewMSGActivity() {
+        Intent intent = new Intent(this, NewMessage.class);
 
         startActivity(intent);
     }
@@ -39,9 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button_new_message = findViewById(R.id.button_new_message);
 
-        button_new_message.setOnClickListener((view -> {
-            startNewMSGActivity();
-        }));
+        button_new_message.setOnClickListener((view -> startNewMSGActivity()));
 
         button_defined_messages.setOnClickListener((view) -> {
 
