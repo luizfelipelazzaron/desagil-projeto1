@@ -7,22 +7,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DefinedMessagesActivity<Static> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    static String message;
+    String  message;
 
-    private String getMessage() {
-        return message;
-    }
-
-    private void setMessage(String string) {
-        this.message = string;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +27,17 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        Button enviar = findViewById(R.id.enviar);
+        Button send = findViewById(R.id.enviar);
 
-        enviar.setOnClickListener((view -> {
+        send.setOnClickListener((view -> {
             startSendMessageActivity();
         }));
 
+    }
+
+
+    private void setMessage(String message){
+        this.message = message;
     }
 
     @Override
@@ -48,6 +45,7 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         String text = parent.getItemAtPosition(position).toString();
         setMessage(text);
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        setMessage(text);
     }
 
     @Override
@@ -55,8 +53,8 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
     }
 
     private void startSendMessageActivity() {
-        Intent intent = new Intent(DefinedMessagesActivity.this, SendMessage.class);
-        intent.putExtra("message", getMessage());
+        Intent intent = new Intent(this, SendMessage.class);
+        intent.putExtra("arg", message);
         startActivity(intent);
     }
 
