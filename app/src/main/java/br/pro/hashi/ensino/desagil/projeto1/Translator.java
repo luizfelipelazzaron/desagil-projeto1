@@ -286,9 +286,9 @@ class Translator {
         node = map.get(c);
 
         while (node != root){
-            if (node.getRight().getValue() == node.getValue()){
+            if (node.getParent().getRight().getValue() == node.getValue()){
                 devolve = devolve.concat("-");
-            } else if (node.getLeft().getValue() == node.getValue()){
+            } else if (node.getParent().getLeft().getValue() == node.getValue()){
                 devolve = devolve.concat(".");
             }
             c = node.getValue();
