@@ -305,7 +305,7 @@ class Translator {
 //            Node left = node.getLeft();
 //            Node right = node.getRight();
 //
-//
+
 //        }
 
         return morseCode;

@@ -37,5 +37,12 @@
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:textSize="20sp"
+        tools:ignore="ButtonStyle,HardcodedText" />
+
 
 </GridLayout>
