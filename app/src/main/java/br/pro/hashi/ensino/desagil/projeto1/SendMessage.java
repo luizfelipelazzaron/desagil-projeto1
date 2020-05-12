@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
@@ -19,8 +20,10 @@ public class SendMessage extends AppCompatActivity {
 
         Button buttonSendSpecific = findViewById(R.id.cuidadorShortcut);
         Button buttonSendGeneric = findViewById(R.id.button_send);
+        Button back = findViewById(R.id.back);
 
         String message = getIntent().getStringExtra("arg");
+        String previousClassName = getIntent().getStringExtra("previousClassName");
 
 
         buttonSendSpecific.setOnClickListener((view) -> {
@@ -76,6 +79,16 @@ public class SendMessage extends AppCompatActivity {
             // textPhone.setText("");
         });
 
+        back.setOnClickListener((view -> {
+            //Mudando para a tela anterior
+            if (previousClassName == "NewMessage"){
+                startNewMessageActivity();
+            } else {
+                startDefinedMessagesActivity();
+            }
+
+        }));
+
     }
 
     // Método de conveniência para mostrar uma bolha de texto.
@@ -86,6 +99,16 @@ public class SendMessage extends AppCompatActivity {
 
         // Mostra essa bolha.
         toast.show();
+    }
+
+    private void startNewMessageActivity() {
+        Intent intent = new Intent(this,NewMessage.class);
+        startActivity(intent);
+    }
+
+    private void startDefinedMessagesActivity() {
+        Intent intent = new Intent(this,DefinedMessagesActivity.class);
+        startActivity(intent);
     }
 
 }
