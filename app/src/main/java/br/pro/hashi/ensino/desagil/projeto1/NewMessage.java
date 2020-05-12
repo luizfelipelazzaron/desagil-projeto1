@@ -30,10 +30,11 @@ public class NewMessage extends AppCompatActivity {
         this.stack = new Stack<>();
 
         Button buttonSlash = findViewById(R.id.slash);
-        Button buttonSpace = findViewById(R.id.space);
         Button buttonDash = findViewById(R.id.dash);
         Button buttonDot = findViewById(R.id.dot);
         Button buttonBackspace = findViewById(R.id.backspace);
+        Button buttonSpace = findViewById(R.id.space);
+        Button back = findViewById(R.id.back);
         Button send = findViewById(R.id.enviar);
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
@@ -55,6 +56,11 @@ public class NewMessage extends AppCompatActivity {
         send.setOnClickListener((view -> {
             // transforma a message em uma string
             startSendMessageActivity();
+        }));
+
+        back.setOnClickListener((view -> {
+            //Mudando para a tela anterior
+            startMainActivity();
         }));
     }
 
@@ -130,6 +136,11 @@ public class NewMessage extends AppCompatActivity {
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
+        startActivity(intent);
+    }
+
+    private void startMainActivity() {
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 

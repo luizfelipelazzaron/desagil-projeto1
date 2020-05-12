@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
+    android:layout_marginBottom="90dp"
     android:columnCount="1"
     android:padding="30dp"
     android:rowCount="3"
@@ -100,6 +101,7 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Voltar"
@@ -115,6 +117,5 @@
             tools:ignore="ButtonStyle,HardcodedText" />
 
     </LinearLayout>
-
 
 </GridLayout>
