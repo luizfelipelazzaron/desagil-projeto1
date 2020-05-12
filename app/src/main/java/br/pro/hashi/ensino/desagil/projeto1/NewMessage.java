@@ -136,6 +136,7 @@ public class NewMessage extends AppCompatActivity {
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
+        intent.putExtra(this.getLocalClassName(), this.preview.getText().toString());
         startActivity(intent);
     }
 
