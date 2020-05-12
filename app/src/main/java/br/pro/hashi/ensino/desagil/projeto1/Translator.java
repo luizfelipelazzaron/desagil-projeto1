@@ -316,13 +316,18 @@ class Translator {
         Stack<Node> stack = new Stack<>();
         stack.push(this.root);
 
-//        while (!stack.isEmpty()) {
-//            Node node = stack.peek();
-//            Node left = node.getLeft();
-//            Node right = node.getRight();
-//
+        while (!stack.isEmpty()) {
+            Node node = stack.peek();
+            Node left = node.getLeft();
+            Node right = node.getRight();
+            if (left != null) {
+                stack.push(left);
+            }
+            if (right != null) {
+                stack.push(right);
+            }
 
-//        }
+        }
 
         return morseCode;
     }
