@@ -134,8 +134,10 @@ public class NewMessage extends AppCompatActivity {
 
 
     private void startSendMessageActivity() {
+        String previousClassName = this.getLocalClassName();
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
+        intent.putExtra("previousClassName", this.getLocalClassName());
         startActivity(intent);
     }
 
@@ -153,4 +155,5 @@ public class NewMessage extends AppCompatActivity {
         // Mostra essa bolha.
         toast.show();
     }
+
 }

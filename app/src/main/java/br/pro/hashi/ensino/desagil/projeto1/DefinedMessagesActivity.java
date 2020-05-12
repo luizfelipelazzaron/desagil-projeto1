@@ -28,8 +28,14 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         spinner.setOnItemSelectedListener(this);
 
         Button send = findViewById(R.id.enviar);
+        Button back = findViewById(R.id.back);
 
         send.setOnClickListener((view -> startSendMessageActivity()));
+
+        back.setOnClickListener((view -> {
+            //Mudando para a tela anterior
+            startMainActivity();
+        }));
 
     }
 
@@ -53,6 +59,12 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", message);
+        intent.putExtra("previousClassName", this.getLocalClassName());
+        startActivity(intent);
+    }
+
+    private void startMainActivity() {
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 
