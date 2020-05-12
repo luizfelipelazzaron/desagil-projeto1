@@ -291,7 +291,7 @@ class Translator {
             } else if (node.getParent().getLeft().getValue() == node.getValue()){
                 devolve = devolve.concat(".");
             }
-            c = node.getValue();
+            c = node.getParent().getValue();
         }
         // 'andando' o caminho de volta até o root
         String back = "";
