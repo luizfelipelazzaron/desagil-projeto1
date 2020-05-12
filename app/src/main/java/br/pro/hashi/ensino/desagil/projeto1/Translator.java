@@ -245,7 +245,6 @@ class Translator {
 
     }
 
-
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
@@ -280,9 +279,26 @@ class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     @SuppressWarnings("SameReturnValue")
-    private String charToMorse(@SuppressWarnings("unused") Node node) {
+    private String charToMorse(Node node){
+        String devolve = "";
+        char c = node.getValue();
+        // node.getValue() is a char
+        node = map.get(c);
 
-        return " ";
+        while (node != root){
+            if (node.getRight().getValue() == node.getValue()){
+                devolve = devolve.concat("-");
+            } else if (node.getLeft().getValue() == node.getValue()){
+                devolve = devolve.concat(".");
+            }
+            c = node.getValue();
+        }
+        // 'andando' o caminho de volta até o root
+        String back = "";
+        for (int i = devolve.length() - 1; i >= 0; i--) {
+            back += devolve.charAt(i);
+        }
+        return back;
     }
 
 
