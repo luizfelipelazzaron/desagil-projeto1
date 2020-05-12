@@ -291,7 +291,7 @@ class Translator {
             } else if (node.getParent().getLeft().getValue() == node.getValue()){
                 devolve = devolve.concat(".");
             }
-            c = node.getParent().getValue();
+            node = node.getParent();
         }
         // 'andando' o caminho de volta até o root
         String back = "";
@@ -301,7 +301,7 @@ class Translator {
         return back;
     }
 
-
+    // map.get(c) é um node
     // Este método deve permanecer como está. Então ficará.
     public String charToMorse(char c) {
         return charToMorse(map.get(c));
@@ -314,6 +314,7 @@ class Translator {
         LinkedList<String> morseCode = new LinkedList();
         //noinspection MismatchedQueryAndUpdateOfCollection
         Stack<Node> stack = new Stack<>();
+        // criar pilha a partir da raiz
         stack.push(this.root);
 
         while (!stack.isEmpty()) {
@@ -326,7 +327,12 @@ class Translator {
             if (right != null) {
                 stack.push(right);
             }
-
+            // verifica o que está sobrando da árvore que montamos em relacao
+            // ao que tem nos 26 elementos apresentados pelo Requisito 4 -> 26 letras + 10 numeros (0 a 9)
+            if (node.getValue() != '+' && node.getValue() != '=' && node.getValue() != '/' && node.getValue() != ' ') {
+                String newElement = charToMorse(node.getValue());
+                morseCode.add(newElement);
+            }
         }
 
         return morseCode;
