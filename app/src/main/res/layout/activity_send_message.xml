@@ -14,11 +14,9 @@
         android:id="@+id/cuidadorShortcut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:text="Enviar para o cuidador"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
-
 
     <EditText
         android:id="@+id/text_phone"
@@ -27,6 +25,7 @@
         android:hint="Telefone"
         android:inputType="phone"
         android:textSize="20sp"
+        android:gravity="center_horizontal"
         tools:ignore="Autofill,HardcodedText" />
 
     <Button
@@ -44,6 +43,5 @@
         android:text="voltar"
         android:textSize="20sp"
         tools:ignore="ButtonStyle,HardcodedText" />
-
 
 </GridLayout>

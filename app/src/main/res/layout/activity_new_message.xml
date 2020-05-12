@@ -3,7 +3,7 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
     android:layout_marginBottom="90dp"
     android:columnCount="1"
@@ -16,7 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/text_message"
@@ -24,6 +26,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:layout_marginTop="15dp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -31,11 +34,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         tools:context=".MainActivity">
 
         <Button
             android:id="@+id/slash"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/"
             android:textSize="20sp"
@@ -43,7 +47,7 @@
 
         <Button
             android:id="@+id/dash"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
             android:textSize="20sp"
@@ -66,12 +70,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         tools:context=".MainActivity">
 
         <Button
             android:id="@+id/backspace"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="apagar"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
@@ -91,13 +96,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         tools:context=".MainActivity">
 
         <Button
             android:id="@+id/back"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="voltar"
+            android:layout_height="match_parent"
+            android:text="Voltar"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
 

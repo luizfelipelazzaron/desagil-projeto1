@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-  GridLayout é um layout bem conveniente para
-    organizar as telas por grade. Neste exemplo,
-    temos uma com duas linhas e duas colunas.
--->
-
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,12 +10,14 @@
     android:rowCount="3"
     tools:context=".DefinedMessagesActivity">
 
-    <!--
-      Repare que estamos forçando este campo de texto
-      a ocupar duas colunas em vez de apenas uma. Além
-      disso, usamos columnWeight para dizer que ela
-      deve tentar ocupar o espaço horizontal que puder.
-    -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione a mensagem"
+        android:textStyle="bold"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
 
     <Spinner
         android:id="@+id/spinner_messages"
@@ -29,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:backgroundTint="#d9d9d9"
         android:entries="@array/messages"
         android:spinnerMode="dropdown"
@@ -42,7 +38,6 @@
         android:id="@+id/enviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="Escolher destinatário"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
