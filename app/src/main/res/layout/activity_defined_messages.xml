@@ -22,6 +22,13 @@
       disso, usamos columnWeight para dizer que ela
       deve tentar ocupar o espaço horizontal que puder.
     -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione a mensagem"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
 
     <Spinner
         android:id="@+id/spinner_messages"
