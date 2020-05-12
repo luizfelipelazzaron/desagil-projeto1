@@ -59,6 +59,7 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", message);
+        intent.putExtra("previousClassName", this.getLocalClassName());
         startActivity(intent);
     }
 

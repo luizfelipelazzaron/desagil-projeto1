@@ -23,7 +23,7 @@ public class SendMessage extends AppCompatActivity {
         Button back = findViewById(R.id.back);
 
         String message = getIntent().getStringExtra("arg");
-        String previousNewMessage = getIntent().getStringExtra("DefinedMessage");
+        String previousClassName = getIntent().getStringExtra("previousClassName");
 
 
         buttonSendSpecific.setOnClickListener((view) -> {
@@ -81,7 +81,12 @@ public class SendMessage extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            startNewMessageActivity();
+            if (previousClassName == "NewMessage"){
+                startNewMessageActivity();
+            } else {
+                startDefinedMessagesActivity();
+            }
+
         }));
 
     }
@@ -98,6 +103,11 @@ public class SendMessage extends AppCompatActivity {
 
     private void startNewMessageActivity() {
         Intent intent = new Intent(this,NewMessage.class);
+        startActivity(intent);
+    }
+
+    private void startDefinedMessagesActivity() {
+        Intent intent = new Intent(this,DefinedMessagesActivity.class);
         startActivity(intent);
     }
 
