@@ -321,6 +321,7 @@ class Translator {
             Node node = stack.peek();
             Node left = node.getLeft();
             Node right = node.getRight();
+            // diz a ordem que deve ser seguida para estar de acordo com o Requisito 4
             if (left != null) {
                 stack.push(left);
             }
