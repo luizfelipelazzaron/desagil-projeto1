@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@android:color/background_light"
@@ -21,12 +21,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="#FFFFFF"
         android:text="Selecione sua preferência"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="normal|bold"
-        android:layout_marginBottom="10dp"
         tools:ignore="HardcodedText" />
 
     <Button
