@@ -13,23 +13,6 @@
     tools:context=".NewMessage">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:text="Tradutor"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        android:textStyle="normal|bold"
-        tools:ignore="HardcodedText" />
-
-    <view
-        android:id="@+id/view"
-        class="androidx.appcompat.widget.ActionMenuView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
