@@ -17,3 +17,9 @@
 <ul>
   <li><a href=https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/marcelo-hashimoto/>Dr. Marcelo Hashimoto</a></li>
 </ul>
+
+<h3>Informações da Atividade</h2>
+<ul>
+  <li><a href=>Briefing do Projeto 1</a></li>
+  <li><a href=>Histórias do Projeto 1</a></li>
+</ul>
