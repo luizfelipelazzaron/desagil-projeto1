@@ -19,6 +19,7 @@ public class SendMessage extends AppCompatActivity {
     private String temp;
     private TextView phone;
     private Stack<String> stack;
+    private String previousClassName;
 
 
     @Override
@@ -36,10 +37,12 @@ public class SendMessage extends AppCompatActivity {
         Button buttonDot = findViewById(R.id.dot);
         Button buttonBackspace = findViewById(R.id.backspace);
         Button buttonSpace = findViewById(R.id.space);
+        Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
+        Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
 
 
         String message = getIntent().getStringExtra("arg");
-        String previousClassName = getIntent().getStringExtra("previousClassName");
+        previousClassName = getIntent().getStringExtra("previousClassName");
 
         this.phone = findViewById(R.id.text_phone);
         this.translator = new Translator();
@@ -125,6 +128,14 @@ public class SendMessage extends AppCompatActivity {
                 startDefinedMessagesActivity();
             }
 
+        }));
+
+        buttonCharToMorse.setOnClickListener((view) -> {
+            startChartoMorse();
+        } );
+
+        buttonMorseToChar.setOnClickListener((view -> {
+            startMorseToChar();
         }));
 
     }
@@ -214,6 +225,20 @@ public class SendMessage extends AppCompatActivity {
             this.preview.append(s);
         }
 
+    }
+
+    private void startChartoMorse() {
+        Intent intent = new Intent(this,CharToMorse.class);
+        intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        startActivity(intent);
+    }
+
+    private void startMorseToChar() {
+        Intent intent = new Intent(this,MorseToChar.class);
+        intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        startActivity(intent);
     }
 
 }

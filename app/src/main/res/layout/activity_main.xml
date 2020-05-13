@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="#D7DAD7"
+        android:background="#FEBD57"
         android:text="Mensagens pré-definidas"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="#D7DAD7"
+        android:background="#FEBD57"
         android:focusableInTouchMode="false"
         android:text="Digitar nova mensagem"
         android:textSize="20sp"

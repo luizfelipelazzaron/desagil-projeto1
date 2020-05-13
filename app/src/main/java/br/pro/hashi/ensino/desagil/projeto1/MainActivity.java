@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Constrói uma Intent que corresponde ao pedido de "iniciar Activity".
         Intent intent = new Intent(this, DefinedMessagesActivity.class);
+        intent.putExtra("previousClassName", this.getLocalClassName());
+
 
         // Inicia a Activity especificada na Intent.
         startActivity(intent);
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startNewMSGActivity() {
         Intent intent = new Intent(this, NewMessage.class);
-
+        intent.putExtra("previousClassName", this.getLocalClassName());
         startActivity(intent);
     }
 

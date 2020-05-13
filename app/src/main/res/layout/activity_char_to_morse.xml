@@ -42,11 +42,11 @@
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/back"
+        android:id="@+id/backDictionary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="#D7DAD7"
+        android:background="#FEBD57"
         android:text="voltar"
         android:textSize="20sp"
         tools:ignore="ButtonStyle,HardcodedText" />
