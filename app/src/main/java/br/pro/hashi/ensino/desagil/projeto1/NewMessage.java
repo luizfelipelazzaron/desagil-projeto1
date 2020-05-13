@@ -138,7 +138,6 @@ public class NewMessage extends AppCompatActivity {
 
     private void startDicionarioActivity() {
         Intent intent = new Intent(this,CharToMorse.class);
-        intent.putExtra("previousClassName", this.getLocalClassName());
         startActivity(intent);
     }
 

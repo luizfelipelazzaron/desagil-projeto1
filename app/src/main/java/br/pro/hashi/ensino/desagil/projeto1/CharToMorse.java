@@ -19,15 +19,9 @@ public class CharToMorse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_to_morse);
-
         this.translator = new Translator();
         this.codes = translator.getCodes();
-
         Button back = findViewById(R.id.back);
-
-        String previousClassName = getIntent().getStringExtra("previousClassName");
-
-
         // configuração da grade (4 linhas e 6 colunas
         GridLayout gridLayout= findViewById(R.id.GridLayout1);
         gridLayout.setRowCount(4);
@@ -75,12 +69,7 @@ public class CharToMorse extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassName == "NewMessage"){
-                startNewMessageActivity();
-            } else {
-                startDefinedMessagesActivity();
-            }
-
+            startNewMessageActivity();
         }));
 
 
