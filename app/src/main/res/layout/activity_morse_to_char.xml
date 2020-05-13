@@ -4,26 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="30sp"
     tools:context=".MorseToChar">
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D7DAD7"
-        android:text="voltar"
-        android:textSize="20sp"
-        tools:ignore="ButtonStyle,HardcodedText" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Arrasta pro lado"
+        android:text="Arraste para o lado"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textColor="#000000" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -47,5 +39,15 @@
             </GridLayout>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D7DAD7"
+        android:layout_marginTop="10sp"
+        android:text="voltar"
+        android:textSize="20sp"
+        tools:ignore="ButtonStyle,HardcodedText" />
 
 </LinearLayout>
