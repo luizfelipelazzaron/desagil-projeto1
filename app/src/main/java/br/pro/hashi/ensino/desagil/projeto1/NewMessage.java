@@ -39,6 +39,7 @@ public class NewMessage extends AppCompatActivity {
         Button dicionario = findViewById(R.id.dicionario);
 
         dicionario.setOnClickListener((view) -> startDicionarioActivity() );
+        dicionario.setOnClickListener((view) -> startDicionarioActivity2() );
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
@@ -69,6 +70,11 @@ public class NewMessage extends AppCompatActivity {
 
     private void startDicionarioActivity() {
         Intent intent = new Intent(this,CharToMorse.class);
+        startActivity(intent);
+    }
+
+    private void startDicionarioActivity2() {
+        Intent intent = new Intent(this,MorseToChar.class);
         startActivity(intent);
     }
 
