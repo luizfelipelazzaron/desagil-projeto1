@@ -36,6 +36,9 @@ public class NewMessage extends AppCompatActivity {
         Button buttonSpace = findViewById(R.id.space);
         Button back = findViewById(R.id.back);
         Button send = findViewById(R.id.enviar);
+        Button dicionario = findViewById(R.id.dicionario);
+
+        dicionario.setOnClickListener((view) -> startDicionarioActivity() );
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
@@ -63,6 +66,7 @@ public class NewMessage extends AppCompatActivity {
             startMainActivity();
         }));
     }
+
 
 
     private void setMessage(String string) {
@@ -132,9 +136,14 @@ public class NewMessage extends AppCompatActivity {
 
     }
 
+    private void startDicionarioActivity() {
+        Intent intent = new Intent(this,CharToMorse.class);
+        intent.putExtra("previousClassName", this.getLocalClassName());
+        startActivity(intent);
+    }
+
 
     private void startSendMessageActivity() {
-        String previousClassName = this.getLocalClassName();
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
         intent.putExtra("previousClassName", this.getLocalClassName());
