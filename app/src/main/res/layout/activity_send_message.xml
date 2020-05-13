@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    android:padding="30sp"
+    android:paddingTop="15sp"
+    android:paddingLeft="30sp"
+    android:paddingRight="30sp"
+    android:paddingBottom="30sp"
     tools:context=".SendMessage"
     tools:ignore="Overdraw">
 
