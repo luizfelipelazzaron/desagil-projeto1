@@ -40,6 +40,8 @@ public class SendMessage extends AppCompatActivity {
         Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
         Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
 
+        TextView phonetranslated = findViewById(R.id.translated_phone);
+
 
         String message = getIntent().getStringExtra("arg");
         previousClassName = getIntent().getStringExtra("previousClassName");
@@ -92,7 +94,7 @@ public class SendMessage extends AppCompatActivity {
         buttonSendGeneric.setOnClickListener((view) -> {
 
 
-            String phoneValue = phone.getText().toString();
+            String phoneValue = phonetranslated.getText().toString();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");
