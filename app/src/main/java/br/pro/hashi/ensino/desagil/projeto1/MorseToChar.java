@@ -24,7 +24,7 @@ public class MorseToChar extends AppCompatActivity {
         this.codes = translator.getCodes();
         Button back = findViewById(R.id.back);
         // configuração da grade (4 linhas e 6 colunas
-        GridLayout gridLayout= findViewById(R.id.GridLayout1);
+        GridLayout gridLayout= findViewById(R.id.GridLayout2);
         gridLayout.setRowCount(4);
         gridLayout.setColumnCount(9);
 
@@ -41,7 +41,7 @@ public class MorseToChar extends AppCompatActivity {
             // traço em ASCII: 8210
             // ponto em ASCII: 8226
             // formatação de um pedaço de string como no python
-            String text = String.format(" %c[%s] ", thisChar, thisString.replace('-', (char)8210) ).replace('.', (char)8226);
+            String text = String.format(" %s[%c] ", thisString.replace('-', (char)8210), thisChar ).replace('.', (char)8226);
             // adicionar a string formatada à lista criada logo antes do loop
             list.push(text);
 

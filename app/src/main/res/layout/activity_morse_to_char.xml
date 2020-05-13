@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <GridLayout
-                android:id="@+id/GridLayout1"
+                android:id="@+id/GridLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -43,7 +43,6 @@
                 android:columnCount="18"
                 android:orientation="vertical"
                 android:useDefaultMargins="true">
-
 
             </GridLayout>
         </LinearLayout>
