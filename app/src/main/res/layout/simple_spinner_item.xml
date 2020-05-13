@@ -8,6 +8,5 @@
     android:textAlignment="center"
     android:ellipsize="marquee"
     android:singleLine="true"
-    android:background="#76FF03"
     android:textSize="22sp"
     android:textStyle="bold" />

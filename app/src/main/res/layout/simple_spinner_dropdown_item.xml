@@ -9,7 +9,6 @@
     android:ellipsize="marquee"
     android:singleLine="true"
     android:textAlignment="center"
-    android:background="#76FF03"
     android:textColor="#aa66cc"
     android:textSize="22sp"
     tools:ignore="UnusedResources" />
