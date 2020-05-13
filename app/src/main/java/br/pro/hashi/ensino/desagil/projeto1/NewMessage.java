@@ -39,6 +39,7 @@ public class NewMessage extends AppCompatActivity {
         Button send = findViewById(R.id.enviar);
         Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
         Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
+        previousClassName = getIntent().getStringExtra("previousClassName");
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
