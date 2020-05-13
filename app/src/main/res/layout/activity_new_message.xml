@@ -131,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2.5sp"
             android:layout_weight="1"
-            android:background="#FF9100"
+            android:background="#D7DAD7"
             android:text="voltar"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
@@ -142,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2.5sp"
             android:layout_weight="1"
-            android:background="#FFEA00"
+            android:background="#D7DAD7"
             android:text="destinatário"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
