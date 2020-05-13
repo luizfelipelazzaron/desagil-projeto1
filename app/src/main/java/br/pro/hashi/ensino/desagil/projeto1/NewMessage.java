@@ -16,6 +16,7 @@ public class NewMessage extends AppCompatActivity {
     private String temp;
     private TextView message;
     private Stack<String> stack;
+    private String previousClassName;
     // --Commented out by Inspection (5/6/2020 12:29 PM):private static final int REQUEST_SEND_SMS = 0;
 
     @Override
@@ -73,13 +74,6 @@ public class NewMessage extends AppCompatActivity {
             startMorseToChar();
         }));
     }
-
-    private void startDicionarioActivity2() {
-        Intent intent = new Intent(this,MorseToChar.class);
-        startActivity(intent);
-    }
-
-
 
     private void setMessage(String string) {
         switch (string) {
@@ -148,12 +142,6 @@ public class NewMessage extends AppCompatActivity {
 
     }
 
-    private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
-        startActivity(intent);
-    }
-
-
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
@@ -168,6 +156,15 @@ public class NewMessage extends AppCompatActivity {
 
     private void startMorseToChar() {
         Intent intent = new Intent(this,MorseToChar.class);
+        intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        intent.putExtra("previousClassName",previousClassName );
+        startActivity(intent);
+    }
+
+    private void startChartoMorse() {
+        Intent intent = new Intent(this,CharToMorse.class);
+        intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        intent.putExtra("previousClassName",previousClassName );
         startActivity(intent);
     }
 

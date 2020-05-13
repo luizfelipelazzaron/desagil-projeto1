@@ -15,6 +15,7 @@ import java.util.LinkedList;
 public class MorseToChar extends AppCompatActivity {
     private Translator translator;
     private LinkedList<String> codes;
+    private String previousClassName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,9 @@ public class MorseToChar extends AppCompatActivity {
         setContentView(R.layout.activity_morse_to_char);
         this.translator = new Translator();
         this.codes = translator.getCodes();
-        Button back = findViewById(R.id.back);
+        Button back = findViewById(R.id.backDictionary);
+        previousClassName = getIntent().getStringExtra("previousClassName");
+        String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
         // configuração da grade (4 linhas e 6 colunas
         GridLayout gridLayout= findViewById(R.id.GridLayout2);
         gridLayout.setRowCount(4);
@@ -48,7 +51,12 @@ public class MorseToChar extends AppCompatActivity {
         }
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            startNewMessageActivity();
+            if (previousClassNameForDictionary.equals("NewMessage")){
+                startNewMessageActivity();
+            } else {
+                startSendMessage();
+            }
+
         }));
 
         // organizar a lista em ordem alfabética
@@ -76,6 +84,13 @@ public class MorseToChar extends AppCompatActivity {
 
     private void startNewMessageActivity() {
         Intent intent = new Intent(this,NewMessage.class);
+        intent.putExtra("previousClassName",previousClassName);
+        startActivity(intent);
+    }
+
+    private void startSendMessage() {
+        Intent intent = new Intent(this,SendMessage.class);
+        intent.putExtra("previousClassName",previousClassName);
         startActivity(intent);
     }
 
