@@ -114,8 +114,12 @@
             android:background="#D7DAD7"
             android:text="espaço"
             android:textSize="20sp"
+<<<<<<< HEAD
+            tools:ignore="ButtonStyle,HardcodedText" />
+=======
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
 
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     </LinearLayout>
 
     <TextView
@@ -154,8 +158,12 @@
             android:background="#D7DAD7"
             android:text="Morse/Romano"
             android:textSize="16sp"
+<<<<<<< HEAD
+            tools:ignore="ButtonStyle,HardcodedText"/>
+=======
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
 
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     </LinearLayout>
 
     <LinearLayout
