@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Stack;
 
+@SuppressWarnings("unused")
 public class NewMessage extends AppCompatActivity {
     private Translator translator;
     private TextView preview;
@@ -66,13 +67,9 @@ public class NewMessage extends AppCompatActivity {
             startMainActivity();
         }));
 
-        buttonCharToMorse.setOnClickListener((view -> {
-            startChartoMorse();
-        }));
+        buttonCharToMorse.setOnClickListener((view -> startChartoMorse()));
 
-        buttonMorseToChar.setOnClickListener((view -> {
-            startMorseToChar();
-        }));
+        buttonMorseToChar.setOnClickListener((view -> startMorseToChar()));
 
     }
 

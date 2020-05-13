@@ -13,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.LinkedList;
 
 public class MorseToChar extends AppCompatActivity {
+    @SuppressWarnings("unused")
     private Translator translator;
+    @SuppressWarnings("unused")
     private LinkedList<String> codes;
     private String previousClassName;
 

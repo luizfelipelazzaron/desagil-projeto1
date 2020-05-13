@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.LinkedList;
 
+@SuppressWarnings("ALL")
 public class CharToMorse extends AppCompatActivity {
-    private Translator translator;
     private LinkedList<String> codes;
     private String previousClassName;
 
@@ -21,7 +21,7 @@ public class CharToMorse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_to_morse);
-        this.translator = new Translator();
+        Translator translator = new Translator();
         LinkedList<String> codes = translator.getCodes();
         Button back = findViewById(R.id.backDictionary);
 
