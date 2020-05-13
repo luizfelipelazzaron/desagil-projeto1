@@ -21,10 +21,10 @@
             android:gravity="center_horizontal"
             android:background="#FFFFFF"
             android:padding="7.5sp"
-            android:textColor="#000000"
-            android:textStyle="italic"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="20sp"
+            android:textStyle="italic"
             tools:ignore="Autofill,HardcodedText" />
 
         <TextView
@@ -36,10 +36,10 @@
             android:hint="Digite o número do telefone"
             android:background="#FFFFFF"
             android:padding="7.5sp"
-            android:textColor="#000000"
-            android:textStyle="italic"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="20sp"
+            android:textStyle="italic"
             tools:ignore="Autofill,HardcodedText" />
     </LinearLayout>
 
@@ -53,10 +53,10 @@
             android:id="@+id/slash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="2.5sp"
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="/"
-            android:layout_marginRight="2.5sp"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
 
@@ -64,6 +64,8 @@
             android:id="@+id/dash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5sp"
+            android:layout_marginRight="2.5sp"
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="&#8210;"
@@ -76,6 +78,7 @@
             android:id="@+id/dot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5sp"
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="&#8226;"
@@ -94,10 +97,10 @@
             android:id="@+id/backspace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="2.5sp"
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="apagar"
-            android:layout_marginRight="2.5sp"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
@@ -105,10 +108,10 @@
             android:id="@+id/space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5sp"
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="espaço"
-            android:layout_marginLeft="2.5sp"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
 
