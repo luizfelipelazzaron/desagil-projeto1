@@ -3,11 +3,10 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
+    android:layout_height="match_parent"
     android:columnCount="1"
-    android:padding='30dp'
-    android:rowCount="3"
+    android:rowCount="4"
+    android:padding="30sp"
     tools:context=".SendMessage">
 
     <Button
@@ -22,10 +21,10 @@
         android:id="@+id/text_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:hint="Telefone"
         android:inputType="phone"
         android:textSize="20sp"
-        android:gravity="center_horizontal"
         tools:ignore="Autofill,HardcodedText" />
 
     <Button

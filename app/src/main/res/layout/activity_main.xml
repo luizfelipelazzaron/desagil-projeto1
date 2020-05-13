@@ -8,7 +8,7 @@
     android:background="@android:color/background_light"
     android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:padding="30sp"
     android:visibility="visible"
     tools:context=".MainActivity">
 
@@ -33,7 +33,6 @@
         android:id="@+id/button_defined_messages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E5E5E5"
         android:text="Mensagens pré-definidas"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
@@ -42,9 +41,7 @@
         android:id="@+id/button_new_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E5E5E5"
         android:focusableInTouchMode="false"
-        android:foregroundTint="#FFFFFF"
         android:text="Digitar nova mensagem"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
