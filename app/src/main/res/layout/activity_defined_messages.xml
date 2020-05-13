@@ -33,7 +33,6 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="137dp"
             android:contentDescription="TODO"

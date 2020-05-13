@@ -130,13 +130,9 @@ public class SendMessage extends AppCompatActivity {
 
         }));
 
-        buttonCharToMorse.setOnClickListener((view) -> {
-            startChartoMorse();
-        } );
+        buttonCharToMorse.setOnClickListener((view) -> startChartoMorse());
 
-        buttonMorseToChar.setOnClickListener((view -> {
-            startMorseToChar();
-        }));
+        buttonMorseToChar.setOnClickListener((view -> startMorseToChar()));
 
     }
 
