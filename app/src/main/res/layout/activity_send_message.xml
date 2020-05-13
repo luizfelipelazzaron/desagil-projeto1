@@ -70,8 +70,6 @@
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="&#8210;"
-            android:layout_marginRight="2.5sp"
-            android:layout_marginLeft="2.5sp"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
 
@@ -83,7 +81,6 @@
             android:layout_weight="1"
             android:background="#D7DAD7"
             android:text="&#8226;"
-            android:layout_marginLeft="2.5sp"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
     </LinearLayout>
@@ -114,12 +111,7 @@
             android:background="#D7DAD7"
             android:text="espaço"
             android:textSize="20sp"
-<<<<<<< HEAD
-            tools:ignore="ButtonStyle,HardcodedText" />
-=======
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
-
->>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     </LinearLayout>
 
     <TextView
@@ -144,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2.5sp"
             android:layout_weight="1"
-            android:background="#D7DAD7"
+            android:background="#A7DC68"
             android:text="Romano/Morse"
             android:textSize="16sp"
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
@@ -155,15 +147,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2.5sp"
             android:layout_weight="1"
-            android:background="#D7DAD7"
+            android:background="#A7DC68"
             android:text="Morse/Romano"
             android:textSize="16sp"
-<<<<<<< HEAD
-            tools:ignore="ButtonStyle,HardcodedText"/>
-=======
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
-
->>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     </LinearLayout>
 
     <LinearLayout
@@ -178,7 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2.5sp"
             android:layout_weight="1"
-            android:background="#D7DAD7"
+            android:background="#FEBD57"
             android:text="voltar"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
@@ -189,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2.5sp"
             android:layout_weight="1"
-            android:background="#D7DAD7"
+            android:background="#FEBD57"
             android:text="enviar"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
@@ -200,7 +187,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="#FFEA00"
+        android:background="#F95049"
         android:text="Enviar para o cuidador"
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
