@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:columnCount="2"
+        android:columnCount="3"
         android:rowCount="1"
         tools:context=".NewMessage">
 
