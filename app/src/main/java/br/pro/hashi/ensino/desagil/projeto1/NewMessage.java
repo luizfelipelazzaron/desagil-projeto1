@@ -65,20 +65,17 @@ public class NewMessage extends AppCompatActivity {
             startMainActivity();
         }));
 
-        buttonCharToMorse.setOnClickListener((view) -> {
-            startChartoMorse();
-        } );
+        buttonCharToMorse.setOnClickListener((view) -> startChartoMorse());
 
-        buttonMorseToChar.setOnClickListener((view -> {
-            startMorseToChar();
-        }));
+        buttonMorseToChar.setOnClickListener((view -> startMorseToChar()));
     }
 
-    private void startDicionarioActivity2() {
-        Intent intent = new Intent(this,MorseToChar.class);
-        startActivity(intent);
-    }
-
+// --Commented out by Inspection START (5/13/2020 1:22 PM):
+//    private void startDicionarioActivity2() {
+//        Intent intent = new Intent(this,MorseToChar.class);
+//        startActivity(intent);
+//    }
+// --Commented out by Inspection STOP (5/13/2020 1:22 PM)
 
 
     private void setMessage(String string) {
@@ -149,7 +146,7 @@ public class NewMessage extends AppCompatActivity {
     }
 
     private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
+        Intent intent = new Intent(this, CharToMorse.class);
         startActivity(intent);
     }
 
@@ -162,12 +159,12 @@ public class NewMessage extends AppCompatActivity {
     }
 
     private void startMainActivity() {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     private void startMorseToChar() {
-        Intent intent = new Intent(this,MorseToChar.class);
+        Intent intent = new Intent(this, MorseToChar.class);
         startActivity(intent);
     }
 
