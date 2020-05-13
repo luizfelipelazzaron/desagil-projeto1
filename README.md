@@ -20,6 +20,6 @@
 
 <h3>Informações da Atividade</h2>
 <ul>
-  <li><a href=>Briefing do Projeto 1</a></li>
-  <li><a href=>Histórias do Projeto 1</a></li>
+  <li><a href=https://github.com/luizfelipelazzaron/desagil-projeto1/blob/master/Briefing.pdf>Briefing do Projeto 1</a></li>
+  <li><a href=https://github.com/luizfelipelazzaron/desagil-projeto1/blob/master/Historias.pdf>Histórias do Projeto 1</a></li>
 </ul>
