@@ -36,9 +36,10 @@ public class NewMessage extends AppCompatActivity {
         Button buttonSpace = findViewById(R.id.space);
         Button back = findViewById(R.id.back);
         Button send = findViewById(R.id.enviar);
-        Button dicionario = findViewById(R.id.dicionario);
+        Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
+        Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
 
-        dicionario.setOnClickListener((view) -> startDicionarioActivity() );
+        buttonCharToMorse.setOnClickListener((view) -> startDicionarioActivity() );
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
@@ -64,6 +65,11 @@ public class NewMessage extends AppCompatActivity {
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
             startMainActivity();
+        }));
+
+        buttonMorseToChar.setOnClickListener((view -> {
+            //Mudando para a tela anterior
+            startMorseToChar();
         }));
     }
 
@@ -151,6 +157,11 @@ public class NewMessage extends AppCompatActivity {
 
     private void startMainActivity() {
         Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void startMorseToChar() {
+        Intent intent = new Intent(this,MorseToChar.class);
         startActivity(intent);
     }
 

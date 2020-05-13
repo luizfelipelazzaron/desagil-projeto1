@@ -127,13 +127,34 @@
             tools:ignore="ButtonStyle,HardcodedText" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/dicionario"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#D7DAD7"
-        android:textSize="20sp"
-        android:text="Dicionário" />
+        android:layout_marginTop="10sp">
+
+        <Button
+            android:id="@+id/buttonCharToMorse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2.5sp"
+            android:layout_weight="1"
+            android:background="#D7DAD7"
+            android:text="Romano para Morse"
+            android:textSize="16sp"
+            tools:ignore="ButtonStyle,HardcodedText"/>
+
+        <Button
+            android:id="@+id/buttonMorseToChar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2.5sp"
+            android:layout_weight="1"
+            android:background="#D7DAD7"
+            android:text="Morse para Romano"
+            android:textSize="16sp"
+            tools:ignore="ButtonStyle,HardcodedText"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
