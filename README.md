@@ -1,8 +1,8 @@
-<h1>Projeto 1 da disciplina de Desenvolvimento Colaborativo Ágil</h1>
+<h1>Projeto 1 - Desenvolvimento Colaborativo Ágil 2020.1</h1>
 
 <h2>Informações Gerais</h2>
 
-<h3>Engenharia de Computação Insper - Desenvolvimento Colaboratico Ágil 2020.1</h3>
+<h3>Engenharia de Computação Insper - 3ºSemestre</h3>
 
 <h3>Alunos:</h3>
 <ul>
