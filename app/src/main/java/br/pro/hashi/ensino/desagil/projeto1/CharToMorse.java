@@ -29,7 +29,6 @@ public class CharToMorse extends AppCompatActivity {
         String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
 
 
-
         // configuração da grade (4 linhas e 6 colunas
         GridLayout gridLayout = findViewById(R.id.GridLayout1);
         gridLayout.setRowCount(4);
@@ -77,7 +76,7 @@ public class CharToMorse extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassNameForDictionary.equals("NewMessage")){
+            if (previousClassNameForDictionary.equals("NewMessage")) {
                 startNewMessageActivity();
             } else {
                 startSendMessage();
@@ -89,19 +88,19 @@ public class CharToMorse extends AppCompatActivity {
     }
 
     private void startNewMessageActivity() {
-        Intent intent = new Intent(this,NewMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
+        Intent intent = new Intent(this, NewMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startSendMessage() {
-        Intent intent = new Intent(this,SendMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
+        Intent intent = new Intent(this, SendMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startDefinedMessagesActivity() {
-        Intent intent = new Intent(this,DefinedMessagesActivity.class);
+        Intent intent = new Intent(this, DefinedMessagesActivity.class);
         startActivity(intent);
     }
 

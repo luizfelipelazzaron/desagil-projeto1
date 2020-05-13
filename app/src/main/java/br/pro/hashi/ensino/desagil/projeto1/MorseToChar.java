@@ -55,7 +55,7 @@ public class MorseToChar extends AppCompatActivity {
         }
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassNameForDictionary.equals("NewMessage")){
+            if (previousClassNameForDictionary.equals("NewMessage")) {
                 startNewMessageActivity();
             } else {
                 startSendMessage();
@@ -87,14 +87,14 @@ public class MorseToChar extends AppCompatActivity {
     }
 
     private void startNewMessageActivity() {
-        Intent intent = new Intent(this,NewMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
+        Intent intent = new Intent(this, NewMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startSendMessage() {
-        Intent intent = new Intent(this,SendMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
+        Intent intent = new Intent(this, SendMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 

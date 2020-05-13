@@ -7,8 +7,8 @@
     android:background="#FFFFFF"
     android:columnCount="1"
     android:orientation="vertical"
-    android:paddingTop="15sp"
     android:paddingLeft="30sp"
+    android:paddingTop="15sp"
     android:paddingRight="30sp"
     android:paddingBottom="30sp"
     android:rowCount="3"
@@ -18,10 +18,10 @@
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom"
         android:padding="5sp"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:background="@drawable/custom"
         android:textStyle="bold|italic" />
 
     <TextView
