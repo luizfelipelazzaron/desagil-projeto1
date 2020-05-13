@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
+<<<<<<< HEAD
+=======
+    android:layout_marginBottom="50dp"
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     android:background="#FFFFFF"
     android:columnCount="1"
     android:orientation="vertical"
@@ -31,7 +35,13 @@
         android:padding="7.5sp"
         android:textAlignment="center"
         android:textColor="#000000"
+<<<<<<< HEAD
         android:textSize="20sp" />
+=======
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +81,12 @@
             android:background="#D7DAD7"
             android:text="&#8226;"
             android:textSize="20sp"
+<<<<<<< HEAD
             tools:ignore="ButtonStyle,HardcodedText" />
+=======
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
+
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
     </LinearLayout>
 
     <LinearLayout
@@ -89,7 +104,7 @@
             android:background="#D7DAD7"
             android:text="apagar"
             android:textSize="20sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
 
         <Button
             android:id="@+id/space"
@@ -100,7 +115,7 @@
             android:background="#D7DAD7"
             android:text="espaço"
             android:textSize="20sp"
-            tools:ignore="ButtonStyle,HardcodedText" />
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
     </LinearLayout>
 
     <TextView
@@ -129,7 +144,11 @@
             android:background="#D7DAD7"
             android:text="Romano/Morse"
             android:textSize="16sp"
+<<<<<<< HEAD
             tools:ignore="ButtonStyle,HardcodedText" />
+=======
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
 
         <Button
             android:id="@+id/buttonMorseToChar"
@@ -140,7 +159,11 @@
             android:background="#D7DAD7"
             android:text="Morse/Romano"
             android:textSize="16sp"
+<<<<<<< HEAD
             tools:ignore="ButtonStyle,HardcodedText" />
+=======
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
+>>>>>>> daf67df057d3f4a4b975995b6c0e680529158acb
 
     </LinearLayout>
 
@@ -158,7 +181,7 @@
             android:background="#D7DAD7"
             android:text="voltar"
             android:textSize="20sp"
-            tools:ignore="ButtonStyle,HardcodedText" />
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
 
         <Button
             android:id="@+id/enviar"
@@ -169,7 +192,7 @@
             android:background="#D7DAD7"
             android:text="destinatário"
             android:textSize="20sp"
-            tools:ignore="ButtonStyle,HardcodedText" />
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
     </LinearLayout>
 
 </LinearLayout>
