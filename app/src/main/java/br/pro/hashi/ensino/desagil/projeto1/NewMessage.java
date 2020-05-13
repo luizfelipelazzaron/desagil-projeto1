@@ -40,6 +40,11 @@ public class NewMessage extends AppCompatActivity {
         Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
         Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
         previousClassName = getIntent().getStringExtra("previousClassName");
+        String messageReturned = getIntent().getStringExtra("messageReturned");
+
+        if ( messageReturned != null){
+            message.setText(messageReturned);
+        }
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
@@ -167,6 +172,7 @@ public class NewMessage extends AppCompatActivity {
         Intent intent = new Intent(this,MorseToChar.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
     }
 
@@ -174,6 +180,7 @@ public class NewMessage extends AppCompatActivity {
         Intent intent = new Intent(this,CharToMorse.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
     }
 

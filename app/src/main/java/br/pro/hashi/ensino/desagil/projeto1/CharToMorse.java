@@ -16,6 +16,7 @@ public class CharToMorse extends AppCompatActivity {
     private Translator translator;
     private LinkedList<String> codes;
     private String previousClassName;
+    private String messageReturned;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class CharToMorse extends AppCompatActivity {
 
         previousClassName = getIntent().getStringExtra("previousClassName");
         String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
+        messageReturned = getIntent().getStringExtra("messageReturned");
+
 
 
 
@@ -91,19 +94,17 @@ public class CharToMorse extends AppCompatActivity {
     private void startNewMessageActivity() {
         Intent intent = new Intent(this,NewMessage.class);
         intent.putExtra("previousClassName",previousClassName);
+        intent.putExtra("messageReturned",messageReturned);
         startActivity(intent);
     }
 
     private void startSendMessage() {
         Intent intent = new Intent(this,SendMessage.class);
         intent.putExtra("previousClassName",previousClassName);
+        intent.putExtra("messageReturned",messageReturned);
         startActivity(intent);
     }
 
-    private void startDefinedMessagesActivity() {
-        Intent intent = new Intent(this,DefinedMessagesActivity.class);
-        startActivity(intent);
-    }
 
 
 }

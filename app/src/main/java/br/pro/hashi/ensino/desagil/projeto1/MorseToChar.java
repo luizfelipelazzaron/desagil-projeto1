@@ -16,6 +16,7 @@ public class MorseToChar extends AppCompatActivity {
     private Translator translator;
     private LinkedList<String> codes;
     private String previousClassName;
+    private String messageReturned;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MorseToChar extends AppCompatActivity {
         Button back = findViewById(R.id.backDictionary);
         previousClassName = getIntent().getStringExtra("previousClassName");
         String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
+        messageReturned = getIntent().getStringExtra("messageReturned");
 
         // configuração da grade (4 linhas e 6 colunas
         GridLayout gridLayout = findViewById(R.id.GridLayout2);
@@ -87,12 +89,14 @@ public class MorseToChar extends AppCompatActivity {
     private void startNewMessageActivity() {
         Intent intent = new Intent(this,NewMessage.class);
         intent.putExtra("previousClassName",previousClassName);
+        intent.putExtra("messageReturned",messageReturned);
         startActivity(intent);
     }
 
     private void startSendMessage() {
         Intent intent = new Intent(this,SendMessage.class);
         intent.putExtra("previousClassName",previousClassName);
+        intent.putExtra("messageReturned",messageReturned);
         startActivity(intent);
     }
 

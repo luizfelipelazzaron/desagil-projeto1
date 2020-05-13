@@ -43,6 +43,11 @@ public class SendMessage extends AppCompatActivity {
 
         String message = getIntent().getStringExtra("arg");
         previousClassName = getIntent().getStringExtra("previousClassName");
+        String messageReturned = getIntent().getStringExtra("messageReturned");
+
+        if ( messageReturned != null){
+            phone.setText(messageReturned);
+        }
 
         this.phone = findViewById(R.id.text_phone);
         this.translator = new Translator();
@@ -231,6 +236,7 @@ public class SendMessage extends AppCompatActivity {
         Intent intent = new Intent(this,CharToMorse.class);
         intent.putExtra("previousClassName",previousClassName );
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
     }
 
@@ -238,6 +244,7 @@ public class SendMessage extends AppCompatActivity {
         Intent intent = new Intent(this,MorseToChar.class);
         intent.putExtra("previousClassName",previousClassName );
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
+        intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
     }
 
