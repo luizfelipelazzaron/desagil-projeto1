@@ -11,12 +11,13 @@
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
         android:text="Arraste para o lado"
         android:textAlignment="center"
-        android:layout_marginBottom="10sp"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="normal|bold"
-        android:textColor="#000000" />
+        tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
