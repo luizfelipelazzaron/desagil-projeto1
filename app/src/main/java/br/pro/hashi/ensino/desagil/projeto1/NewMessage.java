@@ -161,16 +161,16 @@ public class NewMessage extends AppCompatActivity {
     }
 
     private void startMorseToChar() {
-        Intent intent = new Intent(this,MorseToChar.class);
+        Intent intent = new Intent(this, MorseToChar.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
-        intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
+        Intent intent = new Intent(this, CharToMorse.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
-        intent.putExtra("previousClassName",previousClassName );
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 

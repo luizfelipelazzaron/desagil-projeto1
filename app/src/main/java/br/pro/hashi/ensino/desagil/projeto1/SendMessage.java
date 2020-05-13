@@ -226,15 +226,15 @@ public class SendMessage extends AppCompatActivity {
     }
 
     private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
-        intent.putExtra("previousClassName",previousClassName );
+        Intent intent = new Intent(this, CharToMorse.class);
+        intent.putExtra("previousClassName", previousClassName);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         startActivity(intent);
     }
 
     private void startMorseToChar() {
-        Intent intent = new Intent(this,MorseToChar.class);
-        intent.putExtra("previousClassName",previousClassName );
+        Intent intent = new Intent(this, MorseToChar.class);
+        intent.putExtra("previousClassName", previousClassName);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         startActivity(intent);
     }
