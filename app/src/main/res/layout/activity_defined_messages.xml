@@ -70,7 +70,7 @@
             android:id="@+id/enviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D7DAD7"
+            android:background="#FEBD57"
             android:text="escolher destinatário"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
@@ -86,7 +86,7 @@
             android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D7DAD7"
+            android:background="#FEBD57"
             android:text="voltar"
             android:textSize="20sp"
             tools:ignore="ButtonStyle,HardcodedText" />
