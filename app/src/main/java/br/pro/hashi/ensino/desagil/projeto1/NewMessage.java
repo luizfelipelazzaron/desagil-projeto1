@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Stack;
 
+@SuppressWarnings("unused")
 public class NewMessage extends AppCompatActivity {
     private Translator translator;
     private TextView preview;
@@ -72,13 +73,9 @@ public class NewMessage extends AppCompatActivity {
             startMainActivity();
         }));
 
-        buttonCharToMorse.setOnClickListener((view -> {
-            startChartoMorse();
-        }));
+        buttonCharToMorse.setOnClickListener((view -> startChartoMorse()));
 
-        buttonMorseToChar.setOnClickListener((view -> {
-            startMorseToChar();
-        }));
+        buttonMorseToChar.setOnClickListener((view -> startMorseToChar()));
 
     }
 
@@ -169,18 +166,16 @@ public class NewMessage extends AppCompatActivity {
     }
 
     private void startMorseToChar() {
-        Intent intent = new Intent(this,MorseToChar.class);
+        Intent intent = new Intent(this, MorseToChar.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
-        intent.putExtra("previousClassName",previousClassName );
-        intent.putExtra("messageReturned",this.preview.getText().toString() );
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
+        Intent intent = new Intent(this, CharToMorse.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
-        intent.putExtra("previousClassName",previousClassName );
-        intent.putExtra("messageReturned",this.preview.getText().toString() );
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 

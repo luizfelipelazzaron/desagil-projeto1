@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.LinkedList;
 
+@SuppressWarnings("ALL")
 public class CharToMorse extends AppCompatActivity {
-    private Translator translator;
     private LinkedList<String> codes;
     private String previousClassName;
     private String messageReturned;
@@ -22,14 +22,13 @@ public class CharToMorse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_to_morse);
-        this.translator = new Translator();
+        Translator translator = new Translator();
         LinkedList<String> codes = translator.getCodes();
         Button back = findViewById(R.id.backDictionary);
 
         previousClassName = getIntent().getStringExtra("previousClassName");
         String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
         messageReturned = getIntent().getStringExtra("messageReturned");
-
 
 
 
@@ -80,7 +79,7 @@ public class CharToMorse extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassNameForDictionary.equals("NewMessage")){
+            if (previousClassNameForDictionary.equals("NewMessage")) {
                 startNewMessageActivity();
             } else {
                 startSendMessage();
@@ -92,19 +91,21 @@ public class CharToMorse extends AppCompatActivity {
     }
 
     private void startNewMessageActivity() {
-        Intent intent = new Intent(this,NewMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
-        intent.putExtra("messageReturned",messageReturned);
+        Intent intent = new Intent(this, NewMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
     private void startSendMessage() {
-        Intent intent = new Intent(this,SendMessage.class);
-        intent.putExtra("previousClassName",previousClassName);
-        intent.putExtra("messageReturned",messageReturned);
+        Intent intent = new Intent(this, SendMessage.class);
+        intent.putExtra("previousClassName", previousClassName);
         startActivity(intent);
     }
 
+    private void startDefinedMessagesActivity() {
+        Intent intent = new Intent(this, DefinedMessagesActivity.class);
+        startActivity(intent);
+    }
 
 
 }

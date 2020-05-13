@@ -40,6 +40,8 @@ public class SendMessage extends AppCompatActivity {
         Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
         Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
 
+        TextView phonetranslated = findViewById(R.id.translated_phone);
+
 
         String message = getIntent().getStringExtra("arg");
         previousClassName = getIntent().getStringExtra("previousClassName");
@@ -97,7 +99,7 @@ public class SendMessage extends AppCompatActivity {
         buttonSendGeneric.setOnClickListener((view) -> {
 
 
-            String phoneValue = phone.getText().toString();
+            String phoneValue = phonetranslated.getText().toString();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");
@@ -135,13 +137,9 @@ public class SendMessage extends AppCompatActivity {
 
         }));
 
-        buttonCharToMorse.setOnClickListener((view) -> {
-            startChartoMorse();
-        } );
+        buttonCharToMorse.setOnClickListener((view) -> startChartoMorse());
 
-        buttonMorseToChar.setOnClickListener((view -> {
-            startMorseToChar();
-        }));
+        buttonMorseToChar.setOnClickListener((view -> startMorseToChar()));
 
     }
 
@@ -233,16 +231,16 @@ public class SendMessage extends AppCompatActivity {
     }
 
     private void startChartoMorse() {
-        Intent intent = new Intent(this,CharToMorse.class);
-        intent.putExtra("previousClassName",previousClassName );
+        Intent intent = new Intent(this, CharToMorse.class);
+        intent.putExtra("previousClassName", previousClassName);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
     }
 
     private void startMorseToChar() {
-        Intent intent = new Intent(this,MorseToChar.class);
-        intent.putExtra("previousClassName",previousClassName );
+        Intent intent = new Intent(this, MorseToChar.class);
+        intent.putExtra("previousClassName", previousClassName);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("messageReturned",this.preview.getText().toString() );
         startActivity(intent);
