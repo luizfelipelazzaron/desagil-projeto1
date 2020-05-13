@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,7 +68,6 @@ public class SendMessage extends AppCompatActivity {
         });
 
 
-
         buttonSendSpecific.setOnClickListener((view) -> {
 
             if (message.isEmpty()) {
@@ -124,7 +122,7 @@ public class SendMessage extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassName.equals("NewMessage")){
+            if (previousClassName.equals("NewMessage")) {
                 startNewMessageActivity();
             } else {
                 startDefinedMessagesActivity();
@@ -153,12 +151,12 @@ public class SendMessage extends AppCompatActivity {
     }
 
     private void startNewMessageActivity() {
-        Intent intent = new Intent(this,NewMessage.class);
+        Intent intent = new Intent(this, NewMessage.class);
         startActivity(intent);
     }
 
     private void startDefinedMessagesActivity() {
-        Intent intent = new Intent(this,DefinedMessagesActivity.class);
+        Intent intent = new Intent(this, DefinedMessagesActivity.class);
         startActivity(intent);
     }
 

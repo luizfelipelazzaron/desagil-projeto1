@@ -51,17 +51,20 @@ public class DefinedMessagesActivity<Static> extends AppCompatActivity implement
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
         setMessage(text);
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
+
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", message);
         intent.putExtra("previousClassName", this.getLocalClassName());
         startActivity(intent);
     }
+
     private void startMainActivity() {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

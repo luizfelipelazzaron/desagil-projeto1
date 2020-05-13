@@ -5,17 +5,14 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.util.Log;
-
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 @SuppressWarnings({"SuspiciousNameCombination", "unused"})
 class Translator {
     private final Node root;
-    @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection", "unused"})
+    @SuppressWarnings({"unused"})
     private HashMap<Character, Node> map;
 
     // Você deve mudar o recheio do construtor,
@@ -23,7 +20,6 @@ class Translator {
     public Translator() {
         this.root = new Node('#');
 
-        //noinspection MismatchedQueryAndUpdateOfCollection
         this.map = new HashMap<>();
 
         // Parte esquerda de E
@@ -275,21 +271,21 @@ class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     @SuppressWarnings("SameReturnValue")
-    private String charToMorse(Node node){
+    private String charToMorse(Node node) {
         Node atual = node;
-        String devolve = "";
+        StringBuilder devolve = new StringBuilder();
 
 
-        while (atual != root){
-            if (atual.getParent().getLeft() == atual){
-                devolve = '.' + devolve;
-            } else{
-                devolve =  '-' + devolve;
+        while (atual != root) {
+            if (atual.getParent().getLeft() == atual) {
+                devolve.insert(0, '.');
+            } else {
+                devolve.insert(0, '-');
             }
             atual = atual.getParent();
         }
         // 'andando' o caminho de volta até o root
-        return devolve;
+        return devolve.toString();
     }
 
     // map.get(c) é um node
@@ -301,6 +297,7 @@ class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
+        //noinspection unchecked
         LinkedList<String> morseCode = new LinkedList();
 
         Queue<Node> queue = new LinkedList<>();
@@ -322,7 +319,7 @@ class Translator {
 
             if (node.getValue() != '+' && node.getValue() != '=' && node.getValue() != '/' && node.getValue() != ' ' && node.getValue() != '#') {
 
-                    morseCode.add(charToMorse(node));
+                morseCode.add(charToMorse(node));
 
             }
         }

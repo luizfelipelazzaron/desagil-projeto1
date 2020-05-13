@@ -1,7 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,6 +7,9 @@ import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.LinkedList;
 
 public class CharToMorse extends AppCompatActivity {
@@ -21,14 +22,16 @@ public class CharToMorse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_to_morse);
         this.translator = new Translator();
-        this.codes = translator.getCodes();
+        LinkedList<String> codes = translator.getCodes();
         Button back = findViewById(R.id.backDictionary);
 
         previousClassName = getIntent().getStringExtra("previousClassName");
         String previousClassNameForDictionary = getIntent().getStringExtra("previousClassNameForDictionary");
 
+
+
         // configuração da grade (4 linhas e 6 colunas
-        GridLayout gridLayout= findViewById(R.id.GridLayout1);
+        GridLayout gridLayout = findViewById(R.id.GridLayout1);
         gridLayout.setRowCount(4);
         gridLayout.setColumnCount(9);
 
@@ -45,7 +48,7 @@ public class CharToMorse extends AppCompatActivity {
             // traço em ASCII: 8210
             // ponto em ASCII: 8226
             // formatação de um pedaço de string como no python
-            String text = String.format(" %c[%s] ", thisChar, thisString.replace('-', (char)8210) ).replace('.', (char)8226);
+            String text = String.format(" %c[%s] ", thisChar, thisString.replace('-', (char) 8210)).replace('.', (char) 8226);
             // adicionar a string formatada à lista criada logo antes do loop
             list.push(text);
 

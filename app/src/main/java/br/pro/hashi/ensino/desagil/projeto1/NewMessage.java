@@ -68,13 +68,23 @@ public class NewMessage extends AppCompatActivity {
 
         buttonCharToMorse.setOnClickListener((view) -> {
             startChartoMorse();
-        } );
+        }));
 
         buttonMorseToChar.setOnClickListener((view -> {
             startMorseToChar();
         }));
+
     }
 
+// --Commented out by Inspection START (5/13/2020 1:22 PM):
+//    private void startDicionarioActivity2() {
+//        Intent intent = new Intent(this,MorseToChar.class);
+//        startActivity(intent);
+//    }
+// --Commented out by Inspection STOP (5/13/2020 1:22 PM)
+
+
+>>>>>>> b5a2a0e8136fd89026f6a1528696d57c44798368
     private void setMessage(String string) {
         switch (string) {
             case "backspace":
@@ -142,6 +152,15 @@ public class NewMessage extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
+=======
+    private void startChartoMorse() {
+        Intent intent = new Intent(this, CharToMorse.class);
+        startActivity(intent);
+    }
+
+
+>>>>>>> b5a2a0e8136fd89026f6a1528696d57c44798368
     private void startSendMessageActivity() {
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
@@ -150,11 +169,12 @@ public class NewMessage extends AppCompatActivity {
     }
 
     private void startMainActivity() {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     private void startMorseToChar() {
+<<<<<<< HEAD
         Intent intent = new Intent(this,MorseToChar.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("previousClassName",previousClassName );
@@ -165,6 +185,9 @@ public class NewMessage extends AppCompatActivity {
         Intent intent = new Intent(this,CharToMorse.class);
         intent.putExtra("previousClassNameForDictionary", this.getLocalClassName());
         intent.putExtra("previousClassName",previousClassName );
+=======
+        Intent intent = new Intent(this, MorseToChar.class);
+>>>>>>> b5a2a0e8136fd89026f6a1528696d57c44798368
         startActivity(intent);
     }
 
