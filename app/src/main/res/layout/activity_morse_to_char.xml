@@ -4,16 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CharToMorse">
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D7DAD7"
-        android:text="voltar"
-        android:textSize="20sp"
-        tools:ignore="ButtonStyle,HardcodedText" />
+    tools:context=".MorseToChar">
 
     <TextView
         android:id="@+id/textView11"

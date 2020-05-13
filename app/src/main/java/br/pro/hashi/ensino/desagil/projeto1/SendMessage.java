@@ -6,11 +6,21 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Stack;
+
 public class SendMessage extends AppCompatActivity {
+
+    private Translator translator;
+    private TextView preview;
+    private String temp;
+    private TextView phone;
+    private Stack<String> stack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +32,39 @@ public class SendMessage extends AppCompatActivity {
         Button buttonSendGeneric = findViewById(R.id.button_send);
         Button back = findViewById(R.id.back);
 
+        Button buttonSlash = findViewById(R.id.slash);
+        Button buttonDash = findViewById(R.id.dash);
+        Button buttonDot = findViewById(R.id.dot);
+        Button buttonBackspace = findViewById(R.id.backspace);
+        Button buttonSpace = findViewById(R.id.space);
+
+
         String message = getIntent().getStringExtra("arg");
         String previousClassName = getIntent().getStringExtra("previousClassName");
+
+        this.phone = findViewById(R.id.text_phone);
+        this.translator = new Translator();
+        this.preview = findViewById((R.id.translated_phone));
+        this.temp = "";
+        this.stack = new Stack<>();
+
+        buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
+        buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
+        buttonDash.setOnClickListener((view) -> {
+            this.temp += "-";
+            phone.append("-");
+        });
+        buttonDot.setOnClickListener((view) -> {
+            this.temp += ".";
+            phone.append(".");
+        });
+        buttonBackspace.setOnClickListener((view) -> {
+            this.setMessage("backspace");
+            String receivedMessage = phone.getText().toString();
+            String erasedMessage = erase(receivedMessage);
+            phone.setText(erasedMessage);
+        });
+
 
 
         buttonSendSpecific.setOnClickListener((view) -> {
@@ -49,9 +90,8 @@ public class SendMessage extends AppCompatActivity {
 
         buttonSendGeneric.setOnClickListener((view) -> {
 
-            EditText inputPhone = findViewById(R.id.text_phone);
 
-            String phoneValue = inputPhone.getText().toString();
+            String phoneValue = phone.getText().toString();
 
             if (message.isEmpty()) {
                 showToast("Mensagem inválida!");
@@ -81,7 +121,7 @@ public class SendMessage extends AppCompatActivity {
 
         back.setOnClickListener((view -> {
             //Mudando para a tela anterior
-            if (previousClassName == "NewMessage"){
+            if (previousClassName.equals("NewMessage")){
                 startNewMessageActivity();
             } else {
                 startDefinedMessagesActivity();
@@ -111,4 +151,77 @@ public class SendMessage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void setMessage(String string) {
+        switch (string) {
+            case "backspace":
+                if (this.temp != null && this.temp.length() > 0) {
+                    this.temp = this.temp.substring(0, this.temp.length() - 1);
+                } else {
+                    if (!this.stack.isEmpty()) {
+                        this.temp = this.stack.pop();
+                    }
+                    this.backspacePreview();
+                }
+                break;
+            case " ":
+                inputMorse(this.temp);
+                this.phone.append(" ");
+                this.stack.push(this.temp);
+                this.temp = "";
+                break;
+            case "/":
+                inputMorse(this.temp);
+                this.stack.push(this.temp);
+                this.temp = "";
+                this.preview.append(" ");
+                this.phone.append("/");
+                break;
+            default:
+                this.temp += string;
+                this.preview.append(string);
+                break;
+        }
+
+    }
+
+    private void backspacePreview() {
+        String previewToString = this.preview.getText().toString();
+        int counter;
+        if (previewToString.length() > 0) {
+            if (previewToString.charAt(previewToString.length() - 1) == ' ') {
+                counter = 2;
+            } else {
+                counter = 1;
+            }
+            previewToString = previewToString.substring(0, previewToString.length() - counter);
+            this.preview.setText(previewToString);
+        }
+    }
+
+    private String erase(String string) {
+        if (string != null && string.length() > 0) {
+            string = string.substring(0, string.length() - 1);
+        }
+        return string;
+    }
+
+
+    private void inputMorse(String outraMessage) {
+        if (outraMessage != null) {
+            char morseOutput = translator.morseToChar(outraMessage);
+            if (morseOutput == '#') {
+                showToast("código incorreto");
+            }
+            String s = String.valueOf(morseOutput);
+            this.preview.append(s);
+        }
+
+    }
+
 }
+
+
+
+
+
+

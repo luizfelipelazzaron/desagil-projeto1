@@ -2,30 +2,26 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
+
 import java.util.LinkedList;
 
-public class CharToMorse extends AppCompatActivity {
+public class MorseToChar extends AppCompatActivity {
+
     private Translator translator;
     private LinkedList<String> codes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_char_to_morse);
+        setContentView(R.layout.activity_morse_to_char);
 
         this.translator = new Translator();
         this.codes = translator.getCodes();
-
-        Button back = findViewById(R.id.back);
-
-        String previousClassName = getIntent().getStringExtra("previousClassName");
 
 
         // configuração da grade (4 linhas e 6 colunas
@@ -53,7 +49,8 @@ public class CharToMorse extends AppCompatActivity {
         }
 
         // organizar a lista em ordem alfabética
-        list.sort(String::compareToIgnoreCase);
+            list = reverseList(list);
+
 
         // adicionar as strings da lista nas células da tabela/grid
         for (int i = 0; i < list.size(); i++) {
@@ -72,32 +69,18 @@ public class CharToMorse extends AppCompatActivity {
             gridLayout.addView(textView);
 
         }
-
-        back.setOnClickListener((view -> {
-            //Mudando para a tela anterior
-            if (previousClassName == "NewMessage"){
-                startNewMessageActivity();
-            } else {
-                startDefinedMessagesActivity();
-            }
-
-        }));
-
-
-
-
     }
 
-    private void startNewMessageActivity() {
-        Intent intent = new Intent(this,NewMessage.class);
-        startActivity(intent);
-    }
+    private LinkedList<String> reverseList (LinkedList<String> list){
 
-    private void startDefinedMessagesActivity() {
-        Intent intent = new Intent(this,DefinedMessagesActivity.class);
-        startActivity(intent);
-    }
+        LinkedList<String> reversed = new LinkedList<>();
 
+        for (int i = list.size() - 1; i >= 0; i--){
+
+            reversed.push(list.get(i));
+
+        }
+        return reversed;
+    }
 
 }
-
