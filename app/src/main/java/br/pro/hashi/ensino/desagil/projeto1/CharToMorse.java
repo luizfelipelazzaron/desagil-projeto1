@@ -2,12 +2,13 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
-
 import java.util.LinkedList;
 
 public class CharToMorse extends AppCompatActivity {
@@ -18,11 +19,9 @@ public class CharToMorse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_to_morse);
-
         this.translator = new Translator();
         this.codes = translator.getCodes();
-
-
+        Button back = findViewById(R.id.back);
         // configuração da grade (4 linhas e 6 colunas
         GridLayout gridLayout= findViewById(R.id.GridLayout1);
         gridLayout.setRowCount(4);
@@ -67,6 +66,27 @@ public class CharToMorse extends AppCompatActivity {
             gridLayout.addView(textView);
 
         }
+
+        back.setOnClickListener((view -> {
+            //Mudando para a tela anterior
+            startNewMessageActivity();
+        }));
+
+
+
+
     }
 
+    private void startNewMessageActivity() {
+        Intent intent = new Intent(this,NewMessage.class);
+        startActivity(intent);
+    }
+
+    private void startDefinedMessagesActivity() {
+        Intent intent = new Intent(this,DefinedMessagesActivity.class);
+        startActivity(intent);
+    }
+
+
 }
+

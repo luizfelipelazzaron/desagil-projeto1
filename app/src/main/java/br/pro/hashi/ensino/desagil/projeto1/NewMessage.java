@@ -36,10 +36,8 @@ public class NewMessage extends AppCompatActivity {
         Button buttonSpace = findViewById(R.id.space);
         Button back = findViewById(R.id.back);
         Button send = findViewById(R.id.enviar);
-        Button dicionario = findViewById(R.id.dicionario);
-
-        dicionario.setOnClickListener((view) -> startDicionarioActivity() );
-        dicionario.setOnClickListener((view) -> startDicionarioActivity2() );
+        Button buttonCharToMorse = findViewById(R.id.buttonCharToMorse);
+        Button buttonMorseToChar = findViewById(R.id.buttonMorseToChar);
 
         buttonSlash.setOnClickListener((view) -> this.setMessage("/"));
         buttonSpace.setOnClickListener((view) -> this.setMessage(" "));
@@ -66,17 +64,21 @@ public class NewMessage extends AppCompatActivity {
             //Mudando para a tela anterior
             startMainActivity();
         }));
-    }
 
-    private void startDicionarioActivity() {
-        Intent intent = new Intent(this,CharToMorse.class);
-        startActivity(intent);
+        buttonCharToMorse.setOnClickListener((view) -> {
+            startChartoMorse();
+        } );
+
+        buttonMorseToChar.setOnClickListener((view -> {
+            startMorseToChar();
+        }));
     }
 
     private void startDicionarioActivity2() {
         Intent intent = new Intent(this,MorseToChar.class);
         startActivity(intent);
     }
+
 
 
     private void setMessage(String string) {
@@ -146,9 +148,13 @@ public class NewMessage extends AppCompatActivity {
 
     }
 
+    private void startChartoMorse() {
+        Intent intent = new Intent(this,CharToMorse.class);
+        startActivity(intent);
+    }
+
 
     private void startSendMessageActivity() {
-        String previousClassName = this.getLocalClassName();
         Intent intent = new Intent(this, SendMessage.class);
         intent.putExtra("arg", this.preview.getText().toString());
         intent.putExtra("previousClassName", this.getLocalClassName());
@@ -157,6 +163,11 @@ public class NewMessage extends AppCompatActivity {
 
     private void startMainActivity() {
         Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void startMorseToChar() {
+        Intent intent = new Intent(this,MorseToChar.class);
         startActivity(intent);
     }
 
